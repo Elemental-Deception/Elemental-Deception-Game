@@ -1,0 +1,91 @@
+# Unity generated files
+Library/
+Temp/
+Obj/
+Build/
+UnityGenerated/
+.vscode/
+
+# Visual Studio / Rider / MonoDevelop generated files
+.vscode/
+.idea/
+*.sln
+*.csproj
+*.suo
+*.user
+*.userprefs
+*.sln.docstates
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# User-specific files
+*.userprefs
+
+# Auto-generated VS/MD/Windows folder
+ExportedObj/
+*.svd
+*.pdb
+
+# Gradle files
+.gradle/
+
+# Android
+*.apk
+*.ap_
+*.aab
+.gradle/
+build/
+Android/libs/armeabi-v7a/
+Android/libs/x86/
+Android/libs/arm64-v8a/
+Android/libs/x86_64/
+Android/obj/
+Android/temp/
+*.aar
+
+# iOS
+/build/
+*.ipa
+*.xcworkspace/
+*.xcuserdatad/
+*.xcodeproj/
+*.plist
+*.mode1v3
+*.mode2v3
+*.mode3v3
+*.mode4v3
+*.mode5v3
+*.mode6v3
+*.hmap
+*.ipa.zip
+*.xcuserstate
+project.pbxproj
+
+# Build artifacts
+*.dll
+*.jsproj
+*.pdb
+*.mdb
+*.map
+*.hprof
+*.unitypackage
+
+# Crashlytics generated file
+crashlytics-build.properties
+
+# Packed Play Services
+google-services.json
+
+# Firebase generated files
+firebase/*.json
+firebase/*.lock
+
+# Keystore files
+*.keystore
