@@ -2,11 +2,11 @@
 Library/
 Temp/
 Logs/
-Library/
 Obj/
 Build/
 UnityGenerated/
 .vscode/
+UserSettings/
 
 # Visual Studio / Rider / MonoDevelop generated files
 .vscode/
