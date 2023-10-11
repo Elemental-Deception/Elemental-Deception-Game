@@ -7,6 +7,7 @@ Build/
 UnityGenerated/
 .vscode/
 UserSettings/
+Packages/
 
 # Visual Studio / Rider / MonoDevelop generated files
 .vscode/
@@ -17,6 +18,7 @@ UserSettings/
 *.user
 *.userprefs
 *.sln.docstates
+*.cs
 
 # OS generated files
 .DS_Store
