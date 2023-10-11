@@ -29,9 +29,9 @@ public class DoorScript : MonoBehaviour
         transform.GetComponent<SpriteRenderer>().sprite = OpenDoorImage;
         player.SetActive(false);
         yield return new WaitForSeconds(TimeBeforeNextScene);
-        SceneManager.LoadScene("Home");
         transform.GetComponent<SpriteRenderer>().sprite = CloseDoorImage;
         yield return new WaitForSeconds(TimeBeforeNextScene);
+        SceneSwitcher();
     }
 
     public void OnTriggerEnter2D(Collider2D collision)
@@ -39,6 +39,16 @@ public class DoorScript : MonoBehaviour
         if(collision.gameObject.tag == "Player")
         {
             PlayerIsAtTheDoor = true;
+        }
+    }
+
+    public void SceneSwitcher()
+    {
+        if(SceneManager.GetSceneByName("Home").isLoaded){
+            SceneManager.LoadScene("Village");
+        }
+        if(SceneManager.GetSceneByName("Village").isLoaded){
+            SceneManager.LoadScene("Home");
         }
     }
 
