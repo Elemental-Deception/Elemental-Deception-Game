@@ -18,6 +18,7 @@ Packages/
 *.user
 *.userprefs
 *.sln.docstates
+*.cs
 
 # OS generated files
 .DS_Store
