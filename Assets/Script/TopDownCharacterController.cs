@@ -7,8 +7,10 @@ namespace Cainos.PixelArtTopDown_Basic
     public class TopDownCharacterController : MonoBehaviour
     {
         public float speed;
-
+        Vector2 dir = Vector2.zero;
         private Animator animator;
+        private Vector2 movement;
+        bool flipped;
 
         private void Start()
         {
@@ -18,16 +20,19 @@ namespace Cainos.PixelArtTopDown_Basic
 
         private void Update()
         {
-            Vector2 dir = Vector2.zero;
+            Vector2 movement = new Vector2(Input.GetAxis("Horizontal"), 0).normalized;
+            dir = Vector2.zero;
             if (Input.GetKey(KeyCode.A))
             {
                 dir.x = -1;
                 animator.SetInteger("Direction", 3);
+                flipped = movement.x < 0;
             }
             else if (Input.GetKey(KeyCode.D))
             {
                 dir.x = 1;
                 animator.SetInteger("Direction", 2);
+                flipped = movement.x < 0;
             }
 
             if (Input.GetKey(KeyCode.W))
@@ -43,8 +48,18 @@ namespace Cainos.PixelArtTopDown_Basic
 
             dir.Normalize();
             animator.SetBool("IsMoving", dir.magnitude > 0);
+            this.transform.rotation = Quaternion.Euler(new Vector3(0f, flipped ? 180f : 0f, 0f));
+
 
             GetComponent<Rigidbody2D>().velocity = speed * dir;
+        }
+        private void FixedUpdate()
+        {
+            if(dir != Vector2.zero)
+            {
+                var xMovement = movement.x * speed * Time.deltaTime;
+                this.transform.Translate(new Vector3(xMovement, 0), Space.World);
+            }
         }
     }
 }
