@@ -1,15 +1,20 @@
 # Unity generated files
-Library/
-Temp/
-Logs/
-Obj/
-Build/
-UnityGenerated/
-.vscode/
-UserSettings/
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Bb]uilds/
+/[Ll]ogs/
+/[Uu]ser[Ss]ettings/
+
+
+# MemoryCaptures can get excessive in size.
+# They also could contain extremely sensitive data
+[Mm]emoryCaptures/
 
 # Visual Studio / Rider / MonoDevelop generated files
 .vscode/
+.history
 .idea/
 *.sln
 *.csproj
@@ -17,6 +22,9 @@ UserSettings/
 *.user
 *.userprefs
 *.sln.docstates
+
+# File on Crash Reports mode
+sysinfo.txt
 
 # OS generated files
 .DS_Store
@@ -92,3 +100,44 @@ firebase/*.lock
 
 # Keystore files
 *.keystore
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Windows image file caches
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Dd]ebugPublic/
+[Rr]eleasePublic/
+out/
+_op/
+_opk/
+_opd/
+
+# Uncomment if you have tasks that create the project's static files in wwwroot
+#wwwroot/
+
+# Rider directory
+.idea/
+
+# T4 Text Templates
+*.tt.h
+*.tt.c
+# Windows image file caches
+*.db
+*.db-wal
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
