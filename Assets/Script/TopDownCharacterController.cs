@@ -1,11 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using TMPro;
+using UnityEngine.UI;
 
 namespace Cainos.PixelArtTopDown_Basic
 {
     public class TopDownCharacterController : MonoBehaviour
     {
+        public string deathSceneName;
         public float speed;
         Vector2 dir = Vector2.zero;
         private Animator animator;
@@ -60,6 +64,11 @@ namespace Cainos.PixelArtTopDown_Basic
                 var xMovement = movement.x * speed * Time.deltaTime;
                 this.transform.Translate(new Vector3(xMovement, 0), Space.World);
             }
+        }
+
+        public void PlayerDie()
+        {
+            SceneManager.LoadScene(deathSceneName, LoadSceneMode.Single);
         }
     }
 }
