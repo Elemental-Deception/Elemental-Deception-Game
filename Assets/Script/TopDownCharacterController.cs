@@ -65,10 +65,5 @@ namespace Cainos.PixelArtTopDown_Basic
                 this.transform.Translate(new Vector3(xMovement, 0), Space.World);
             }
         }
-
-        public void PlayerDie()
-        {
-            SceneManager.LoadScene(deathSceneName, LoadSceneMode.Single);
-        }
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 using TMPro;
 using UnityEngine.UI;
 
-public class Menu : MonoBehaviour
+public class GameOverMenu : MonoBehaviour
 {
     public string sceneName;
 
