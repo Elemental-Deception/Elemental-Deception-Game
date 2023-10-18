@@ -17,7 +17,7 @@ public class EnemySpell : MonoBehaviour
         if (enemy != null)
         {
             enemy.TakeDmg(15);
-            Debug.Log("Dmg : " + enemy.getHealth());
+            Debug.Log("Dmg : " + enemy.GetHealth());
 
         }
     }

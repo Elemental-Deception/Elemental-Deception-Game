@@ -61,9 +61,11 @@
     <Compile Include="Assets\Script\CameraFollow.cs" />
     <Compile Include="Assets\Script\DoorScript.cs" />
     <Compile Include="Assets\Script\EnemySpellController.cs" />
+    <Compile Include="Assets\2D Progress Bar Toolkit\Scripts\ClassicProgressBar.cs" />
     <Compile Include="Assets\Script\SpriteColorAnimation.cs" />
     <Compile Include="Assets\Script\PlayerSpell.cs" />
     <Compile Include="Assets\Script\TopDownCharacterController.cs" />
+    <Compile Include="Assets\2D Progress Bar Toolkit\Scripts\CircularProgressBar.cs" />
     <Compile Include="Assets\Script\LayerTrigger.cs" />
     <Compile Include="Assets\Script\EnemyFollowPlayer.cs" />
     <Compile Include="Assets\Script\EnemySpell.cs" />
@@ -93,6 +95,7 @@
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
+    <None Include="Assets\2D Progress Bar Toolkit\README.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
     <None Include="Assets\Shader\SH Sprite Shadow Mask.shader" />
@@ -931,20 +934,28 @@
     <Reference Include="Unity.VisualScripting.State">
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.2D.SpriteShape.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.2D.SpriteShape.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.2D.Tilemap.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.2D.Tilemap.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Animation.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.2D.Animation.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.2D.SpriteShape.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.2D.SpriteShape.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.2D.IK.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.2D.IK.Editor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="CodeMonkey_HealthSystem_Editor.csproj">
+      <Project>{26EB4738-12B1-B47C-559D-10DE8312517A}</Project>
+      <Name>CodeMonkey_HealthSystem_Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="CodeMonkey_HealthSystem.csproj">
+      <Project>{987427E8-A16D-E73D-A796-21739618BF04}</Project>
+      <Name>CodeMonkey_HealthSystem</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
