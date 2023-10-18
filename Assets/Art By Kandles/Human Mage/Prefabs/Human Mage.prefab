@@ -1989,6 +1989,7 @@ GameObject:
   - component: {fileID: 6389287955727726383}
   - component: {fileID: 7105543982660498337}
   - component: {fileID: 8419703871530887234}
+  - component: {fileID: 1756781823607731958}
   m_Layer: 20
   m_Name: Human Mage
   m_TagString: Player
@@ -2135,7 +2136,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &7105543982660498337
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2195,6 +2196,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthAmountMax: 100
   startingHealthAmount: 0
+--- !u!114 &1756781823607731958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1553136491257334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 651857eacc0d6ef4a864e8eec71eb690, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthBar: {fileID: 0}
+  DelayAnimation: 0
 --- !u!1 &1579312441608254
 GameObject:
   m_ObjectHideFlags: 0
