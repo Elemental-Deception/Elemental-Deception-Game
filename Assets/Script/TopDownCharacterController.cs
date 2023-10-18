@@ -38,7 +38,6 @@ namespace Cainos.PixelArtTopDown_Basic
                 animator.SetInteger("Direction", 2);
                 flipped = movement.x < 0;
             }
-
             if (Input.GetKey(KeyCode.W))
             {
                 dir.y = 1;
@@ -57,13 +56,13 @@ namespace Cainos.PixelArtTopDown_Basic
 
             GetComponent<Rigidbody2D>().velocity = speed * dir;
         }
-        private void FixedUpdate()
+        /*private void FixedUpdate()
         {
             if(dir != Vector2.zero)
             {
                 var xMovement = movement.x * speed * Time.deltaTime;
                 this.transform.Translate(new Vector3(xMovement, 0), Space.World);
             }
-        }
+        }*/
     }
 }
