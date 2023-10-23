@@ -2209,7 +2209,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 0}
-  DelayAnimation: 0
 --- !u!1 &1579312441608254
 GameObject:
   m_ObjectHideFlags: 0

@@ -1118,7 +1118,7 @@ PrefabInstance:
         type: 3}
       propertyPath: getHealthSystemGameObject
       value: 
-      objectReference: {fileID: 1900778010}
+      objectReference: {fileID: 506076510}
     - target: {fileID: 6848739073536652050, guid: f1419c2a3f5ecf44e824039f908fea60,
         type: 3}
       propertyPath: m_Layer
@@ -1277,6 +1277,12 @@ PrefabInstance:
       addedObject: {fileID: 1016827269}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f1419c2a3f5ecf44e824039f908fea60, type: 3}
+--- !u!1 &506076510 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6848739073373570981, guid: f1419c2a3f5ecf44e824039f908fea60,
+    type: 3}
+  m_PrefabInstance: {fileID: 506076509}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &541710509
 GameObject:
   m_ObjectHideFlags: 0
@@ -2168,7 +2174,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7912dc3ce1cccc4a9e9bf3bdc8f0b0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  getHealthSystemGameObject: {fileID: 1900778010}
+  getHealthSystemGameObject: {fileID: 1016827268}
   image: {fileID: 1298886345}
 --- !u!1001 &1055261277
 PrefabInstance:
@@ -3161,7 +3167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7912dc3ce1cccc4a9e9bf3bdc8f0b0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  getHealthSystemGameObject: {fileID: 1900778010}
+  getHealthSystemGameObject: {fileID: 1501454622}
   image: {fileID: 1615528347}
 --- !u!1001 &1501530645
 PrefabInstance:

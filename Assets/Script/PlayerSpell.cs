@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Spell : MonoBehaviour
+public class PlayerSpell : MonoBehaviour
 {
     // Update is called once per frame
     void OnTriggerEnter2D(Collider2D collision)
@@ -17,7 +17,7 @@ public class Spell : MonoBehaviour
         if (enemy != null)
         {
             enemy.TakeDmg(15);
-            Debug.Log("Dmg : " + enemy.getHealth());
+            Debug.Log("Dmg : " + enemy.GetHealth());
 
         }
     }
