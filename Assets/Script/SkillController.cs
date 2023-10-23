@@ -5,9 +5,15 @@ public class SpellCastingController : MonoBehaviour
 {
     public Animator playerAnimator; // Animator for the player's animations
     public Animator spellAnimator;  // Animator for the spell's animations
+    public GameObject player;
+    
+    public CharacterStatLogic playerLogic;
     private bool isCasting = false;
     private string currentCastingAnimation = ""; // To keep track of the current casting animation name
 
+    void Start(){
+        playerLogic = player.GetComponent<CharacterStatLogic>();
+    }
     private void Update()
     {
         // If the player is casting, don't check for new spell input.
@@ -19,18 +25,23 @@ public class SpellCastingController : MonoBehaviour
             isCasting = true;
             currentCastingAnimation = "1";
             playerAnimator.SetTrigger("Cast0" + currentCastingAnimation);
+            playerLogic.SpendMana(10);
         }
         else if (Input.GetKeyDown(KeyCode.X))
         {
             isCasting = true;
             currentCastingAnimation = "2";
             playerAnimator.SetTrigger("Cast0" + currentCastingAnimation);
+                        playerLogic.SpendMana(15);
+
         }
         else if (Input.GetKeyDown(KeyCode.C))
         {
             isCasting = true;
             currentCastingAnimation = "3";
             playerAnimator.SetTrigger("Cast0" + currentCastingAnimation);
+            playerLogic.SpendMana(20);
+
         }
     }
 
