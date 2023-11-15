@@ -12,6 +12,8 @@ public class EnemyStatLogic : MonoBehaviour
     }
 
     public Image healthBar;
+    public GameObject player;
+    private CharacterStatLogic playerLogic;
     private EnemyStats enemyStats = new EnemyStats();
     private Animator animator;
     private bool isDead = false;
@@ -19,6 +21,7 @@ public class EnemyStatLogic : MonoBehaviour
 
     public void Start()
     {
+        playerLogic = player.GetComponent<CharacterStatLogic>();
         animator = GetComponent<Animator>();
     }
 
@@ -47,6 +50,7 @@ public class EnemyStatLogic : MonoBehaviour
 
     public void DestroyEnemy(float delay)
     {
+        playerLogic.GainXP(10);
         Destroy(gameObject, delay);
     }
 

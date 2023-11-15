@@ -11,7 +11,7 @@ namespace Cainos.PixelArtTopDown_Basic
     {
         public string deathSceneName;
         public float speed;
-        Vector2 dir = Vector2.zero;
+        private Vector2 dir = Vector2.zero;
         private Animator animator;
         private Vector2 movement;
         bool flipped;

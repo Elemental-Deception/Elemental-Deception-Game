@@ -7,11 +7,12 @@ public class SpellCastingController : MonoBehaviour
     public Animator spellAnimator;  // Animator for the spell's animations
     public GameObject player;
     
-    public CharacterStatLogic playerLogic;
+    private CharacterStatLogic playerLogic;
     private bool isCasting = false;
     private string currentCastingAnimation = ""; // To keep track of the current casting animation name
 
-    void Start(){
+    void Start()
+    {
         playerLogic = player.GetComponent<CharacterStatLogic>();
     }
     private void Update()
@@ -20,28 +21,23 @@ public class SpellCastingController : MonoBehaviour
         if (isCasting) return;
 
         // Check which spell is currently pressed and initiate the player's casting animation.
-        if (Input.GetKeyDown(KeyCode.Z))
+        if (Input.GetKeyDown(KeyCode.Z) && playerLogic.SpendMana(10))
         {
             isCasting = true;
             currentCastingAnimation = "1";
             playerAnimator.SetTrigger("Cast0" + currentCastingAnimation);
-            playerLogic.SpendMana(10);
         }
-        else if (Input.GetKeyDown(KeyCode.X))
+        else if (Input.GetKeyDown(KeyCode.X) && playerLogic.SpendMana(15))
         {
             isCasting = true;
             currentCastingAnimation = "2";
             playerAnimator.SetTrigger("Cast0" + currentCastingAnimation);
-                        playerLogic.SpendMana(15);
-
         }
-        else if (Input.GetKeyDown(KeyCode.C))
+        else if (Input.GetKeyDown(KeyCode.C) && playerLogic.SpendMana(20))
         {
             isCasting = true;
             currentCastingAnimation = "3";
             playerAnimator.SetTrigger("Cast0" + currentCastingAnimation);
-            playerLogic.SpendMana(20);
-
         }
     }
 

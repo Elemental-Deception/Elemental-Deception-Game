@@ -10579,6 +10579,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 62992420}
     m_Modifications:
+    - target: {fileID: 6848739073373570981, guid: f1419c2a3f5ecf44e824039f908fea60,
+        type: 3}
+      propertyPath: m_Name
+      value: HealthBarUI (Health)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6848739073536652053, guid: f1419c2a3f5ecf44e824039f908fea60,
+        type: 3}
+      propertyPath: m_FillAmount
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6848739074368699834, guid: f1419c2a3f5ecf44e824039f908fea60,
         type: 3}
       propertyPath: m_Name
@@ -14100,6 +14110,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4956026233730825476, guid: 57b01cfb447fdd8439c8d126dd63d245,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 976994598}
     - target: {fileID: 6148563410856659796, guid: 57b01cfb447fdd8439c8d126dd63d245,
         type: 3}
       propertyPath: m_Name
@@ -24322,6 +24337,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4956026233730825476, guid: 57b01cfb447fdd8439c8d126dd63d245,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 976994598}
     - target: {fileID: 6148563410856659796, guid: 57b01cfb447fdd8439c8d126dd63d245,
         type: 3}
       propertyPath: m_Name
@@ -25685,7 +25705,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1492902744}
   m_Layer: 5
-  m_Name: HealthBarUI (2)
+  m_Name: HealthBarUI (EXP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27663,6 +27683,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4956026233730825476, guid: 57b01cfb447fdd8439c8d126dd63d245,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 976994598}
     - target: {fileID: 6148563410856659796, guid: 57b01cfb447fdd8439c8d126dd63d245,
         type: 3}
       propertyPath: m_Name
@@ -30447,7 +30472,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1955880214}
   m_Layer: 5
-  m_Name: HealthBarUI (1)
+  m_Name: HealthBarUI (Mana)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30636,6 +30661,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4956026233730825476, guid: 57b01cfb447fdd8439c8d126dd63d245,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 976994598}
     - target: {fileID: 6148563410856659796, guid: 57b01cfb447fdd8439c8d126dd63d245,
         type: 3}
       propertyPath: m_Name
@@ -30887,7 +30917,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 1
+  m_FillAmount: 0
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
@@ -33486,6 +33516,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4956026233730825476, guid: 57b01cfb447fdd8439c8d126dd63d245,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 976994598}
     - target: {fileID: 6148563410856659796, guid: 57b01cfb447fdd8439c8d126dd63d245,
         type: 3}
       propertyPath: m_Name
@@ -34435,9 +34470,29 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 535437208046179283, guid: 5e2d7cc0b7f7891409c417654f44dbd5,
         type: 3}
+      propertyPath: XPBar
+      value: 
+      objectReference: {fileID: 2038415056}
+    - target: {fileID: 535437208046179283, guid: 5e2d7cc0b7f7891409c417654f44dbd5,
+        type: 3}
+      propertyPath: ManaBar
+      value: 
+      objectReference: {fileID: 1387370587}
+    - target: {fileID: 535437208046179283, guid: 5e2d7cc0b7f7891409c417654f44dbd5,
+        type: 3}
+      propertyPath: HealthBar
+      value: 
+      objectReference: {fileID: 1945299342}
+    - target: {fileID: 535437208046179283, guid: 5e2d7cc0b7f7891409c417654f44dbd5,
+        type: 3}
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 1945299342}
+    - target: {fileID: 535437208046179283, guid: 5e2d7cc0b7f7891409c417654f44dbd5,
+        type: 3}
+      propertyPath: ManaFactor
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2234047606340614277, guid: 5e2d7cc0b7f7891409c417654f44dbd5,
         type: 3}
       propertyPath: m_LocalScale.x
