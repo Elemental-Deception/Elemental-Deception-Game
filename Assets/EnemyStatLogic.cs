@@ -13,7 +13,7 @@ public class EnemyStatLogic : MonoBehaviour
 
     public float EnemyXP;
     public Image healthBar;
-    private GameObject player;
+    public GameObject player;
     private CharacterStatLogic playerLogic;
     private EnemyStats enemyStats = new EnemyStats();
     private Animator animator;
@@ -22,10 +22,8 @@ public class EnemyStatLogic : MonoBehaviour
 
     public void Start()
     {
-        player = GameObject.FindWithTag("Player");
         playerLogic = player.GetComponent<CharacterStatLogic>();
         animator = GetComponent<Animator>();
-
     }
 
     public void TakeDmg(int damage)

@@ -4,7 +4,7 @@ using System.Collections;
 public class EnemyFollowPlayer : MonoBehaviour
 {
 
-    private Transform player;  // Reference to the player's transform
+    public Transform player;  // Reference to the player's transform
     public Transform Enemy;
     public float speed = 5.0f;  // Speed at which the enemy moves
     public float followDistance = 5.0f;  // The distance at which the enemy starts following the player.
@@ -20,7 +20,6 @@ public class EnemyFollowPlayer : MonoBehaviour
     {
         animator = GetComponentInParent<Animator>();
         rb = GetComponentInParent<Rigidbody2D>();
-        player = GameObject.FindWithTag("Player").transform;
     }
 
     private void Update()
