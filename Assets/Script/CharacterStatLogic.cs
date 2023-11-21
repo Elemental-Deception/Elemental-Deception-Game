@@ -119,15 +119,30 @@ public class CharacterStatLogic : MonoBehaviour
     {
         if(!isDead && (XPBar.fillAmount < 1f))
         {
-            if(((characterStats.XP + (float)XPDelta) / characterStats.MaxXP) <= 1f)
+            if(((characterStats.XP + (float)XPDelta) / characterStats.MaxXP) < 1f)
             {
                 characterStats.XP += (float)XPDelta;
             }
             else
             {
-                characterStats.XP += (characterStats.MaxXP - characterStats.XP);
+                LevelUp();
             }
             XPBar.fillAmount = characterStats.XP / characterStats.MaxXP;
         }
+    }
+
+    public void LevelUp()
+    {
+        characterStats.XP = 0;
+        XPBar.fillAmount = 0f;
+        characterStats.Level++;
+        characterStats.MaxXP = (float)1.2 * characterStats.MaxXP;
+        characterStats.MaxHealth = (float)1.2 * characterStats.MaxHealth;
+        characterStats.MaxMana = (float)1.2 * characterStats.MaxMana;
+        characterStats.ManaRegenSpeed = (float)1.2 * characterStats.ManaRegenSpeed;
+        characterStats.Health = characterStats.MaxHealth;
+        characterStats.Mana = characterStats.MaxMana;
+        HealthBar.fillAmount = 1f;
+        ManaBar.fillAmount = 1f;
     }
 }

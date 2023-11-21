@@ -190,6 +190,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6408323445733133921, guid: d7cea23bf7580b14183c6c3a9a9126cd,
         type: 3}
+      propertyPath: EnemyXP
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6408323445733133921, guid: d7cea23bf7580b14183c6c3a9a9126cd,
+        type: 3}
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 3623133225012413925}

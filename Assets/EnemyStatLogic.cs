@@ -11,6 +11,7 @@ public class EnemyStatLogic : MonoBehaviour
         public float MaxHealth { get; set; } = 100;
     }
 
+    public float EnemyXP;
     public Image healthBar;
     public GameObject player;
     private CharacterStatLogic playerLogic;
@@ -50,7 +51,7 @@ public class EnemyStatLogic : MonoBehaviour
 
     public void DestroyEnemy(float delay)
     {
-        playerLogic.GainXP(10);
+        playerLogic.GainXP(EnemyXP);
         Destroy(gameObject, delay);
     }
 
