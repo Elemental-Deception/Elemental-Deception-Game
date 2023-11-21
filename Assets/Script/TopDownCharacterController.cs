@@ -9,16 +9,19 @@ namespace Cainos.PixelArtTopDown_Basic
 {
     public class TopDownCharacterController : MonoBehaviour
     {
+        public GameObject PauseMenu;
         public string deathSceneName;
         public float speed;
         private Vector2 dir = Vector2.zero;
         private Animator animator;
+        private PauseMenuController pauseMenuController;
         private Vector2 movement;
         bool flipped;
 
         private void Start()
         {
             animator = GetComponent<Animator>();
+            pauseMenuController = PauseMenu.GetComponent<PauseMenuController>();
         }
 
 
@@ -47,6 +50,10 @@ namespace Cainos.PixelArtTopDown_Basic
             {
                 dir.y = -1;
                 animator.SetInteger("Direction", 0);
+            }
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                pauseMenuController.PauseGame();
             }
 
             dir.Normalize();
