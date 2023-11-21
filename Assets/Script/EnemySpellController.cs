@@ -5,28 +5,50 @@ using UnityEngine;
 
 public class EnemySpellController : MonoBehaviour
 {
-    public Transform player;
+    private Transform player;
     public Transform Enemy;
     private float attackRange = 2f;
     private Animator animator;
+    public GameObject attack; // Reference to the Box Collider
+    private BoxCollider2D boxCollider;
 
     private float distance;
+    private bool isAttacking = false;
+
     private void Start()
     {
         animator = GetComponent<Animator>();
+        boxCollider = attack.GetComponent<BoxCollider2D>(); // Get the Box Collider component
+        player = GameObject.FindWithTag("Player").transform;
     }
-    // Update is called once per frame
+
     void Update()
     {
         distance = Vector3.Distance(player.position, transform.position);
-        if (distance <= attackRange)
+        if (distance <= attackRange && !isAttacking)
         {
             Attack();
+        }
+
+        // Check if the attack animation is playing
+        AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
+        if (stateInfo.IsName("Attack") && stateInfo.normalizedTime < 1.0f)
+        {
+            // Animation is playing
+            isAttacking = true;
+            boxCollider.enabled = true;
+        }
+        else if (isAttacking && stateInfo.normalizedTime >= 1.0f)
+        {
+            // Animation has finished
+            isAttacking = false;
+            boxCollider.enabled = false;
         }
     }
 
     void Attack()
     {
         animator.SetTrigger("Attack");
+        // Collider will be enabled in the Update method
     }
 }
