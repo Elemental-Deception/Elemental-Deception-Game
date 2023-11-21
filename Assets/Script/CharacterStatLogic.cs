@@ -2,23 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
-using System;
-using UnityEngine.SceneManagement;
 
 public class CharacterStatLogic : MonoBehaviour
 {
     public Image HealthBar;
     public Image ManaBar;
     public Image XPBar;
-    public int sceneChangeTime;
-    public string sceneName;
-    public TMP_Text LevelText;
-    public TMP_Text ShadowText;
     public double ManaFactor;
-    public class CharacterStats
+    private class CharacterStats
     {
-        public float DamageMultiplier { get; set; } = 1;
         public float Health { get; set; } = 100;
         public float MaxHealth { get; set; } = 100;
         public float Mana { get; set; } = 100;
@@ -29,7 +21,7 @@ public class CharacterStatLogic : MonoBehaviour
         public float Level { get; set; } = 1;
     }
 
-    public CharacterStats characterStats = new CharacterStats();
+    private CharacterStats characterStats = new CharacterStats();
     private Animator animator;
     private bool isDead = false;
 
@@ -54,18 +46,11 @@ public class CharacterStatLogic : MonoBehaviour
             animator.SetTrigger("Dead");  // Assuming you have a trigger named "Die" to play death animation
             animator.SetBool("IsAlive", false);
             isDead = true; // Mark character as dead
-            StartCoroutine(WaitToLoadScene());
         }
         else
         {
             HealthBar.fillAmount = characterStats.Health / characterStats.MaxHealth;
         }
-    }
-
-    IEnumerator WaitToLoadScene()
-    {
-        yield return new WaitForSeconds(sceneChangeTime);
-        SceneManager.LoadScene(sceneName);
     }
 
     public bool SpendMana(int manaCost)
@@ -151,9 +136,6 @@ public class CharacterStatLogic : MonoBehaviour
         characterStats.XP = 0;
         XPBar.fillAmount = 0f;
         characterStats.Level++;
-        LevelText.SetText("Level: <color=#32CD32>" + (int)(Math.Round(characterStats.Level)) + "</color>");
-        ShadowText.SetText("Level: " + (int)(Math.Round(characterStats.Level)));
-        characterStats.DamageMultiplier = (float)1.2 * characterStats.DamageMultiplier;
         characterStats.MaxXP = (float)1.2 * characterStats.MaxXP;
         characterStats.MaxHealth = (float)1.2 * characterStats.MaxHealth;
         characterStats.MaxMana = (float)1.2 * characterStats.MaxMana;

@@ -2094,7 +2094,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abd146093740c5d43b5909c7913f3109, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PauseMenu: {fileID: 0}
   deathSceneName: GameOver
   speed: 4
 --- !u!114 &5674357420884093740
@@ -2111,8 +2110,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerAnimator: {fileID: 95186403685175374}
   spellAnimator: {fileID: 3609314899681320853}
-  player: {fileID: 1553136491257334}
-  PauseMenu: {fileID: 0}
 --- !u!50 &6389287955727726383
 Rigidbody2D:
   serializedVersion: 4
@@ -2198,7 +2195,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthAmountMax: 100
-  startingHealthAmount: 100
+  startingHealthAmount: 0
 --- !u!114 &1756781823607731958
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2211,12 +2208,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 651857eacc0d6ef4a864e8eec71eb690, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HealthBar: {fileID: 0}
-  ManaBar: {fileID: 0}
-  XPBar: {fileID: 0}
-  LevelText: {fileID: 0}
-  ShadowText: {fileID: 0}
-  ManaFactor: 3
+  healthBar: {fileID: 0}
 --- !u!1 &1579312441608254
 GameObject:
   m_ObjectHideFlags: 0

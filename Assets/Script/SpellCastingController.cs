@@ -6,8 +6,6 @@ public class SpellCastingController : MonoBehaviour
     public Animator playerAnimator; // Animator for the player's animations
     public Animator spellAnimator;  // Animator for the spell's animations
     public GameObject player;
-    public GameObject PauseMenu;
-    private PauseMenuController pauseMenuController;
     
     private CharacterStatLogic playerLogic;
     private bool isCasting = false;
@@ -16,19 +14,12 @@ public class SpellCastingController : MonoBehaviour
     void Start()
     {
         playerLogic = player.GetComponent<CharacterStatLogic>();
-        pauseMenuController = PauseMenu.GetComponent<PauseMenuController>();
     }
     private void Update()
     {
-        if(pauseMenuController.isPaused)
-        {
-            return;
-        }
         // If the player is casting, don't check for new spell input.
-        if (isCasting)
-        {
-            return;
-        }
+        if (isCasting) return;
+
         // Check which spell is currently pressed and initiate the player's casting animation.
         if (Input.GetKeyDown(KeyCode.Z) && playerLogic.SpendMana(10))
         {

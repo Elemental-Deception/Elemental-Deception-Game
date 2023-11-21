@@ -82,18 +82,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1756781823607731958, guid: f7c79e3194127d64eb5474288cbc5f9c,
         type: 3}
-      propertyPath: sceneName
-      value: GameOver
-      objectReference: {fileID: 0}
-    - target: {fileID: 1756781823607731958, guid: f7c79e3194127d64eb5474288cbc5f9c,
-        type: 3}
       propertyPath: ManaFactor
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1756781823607731958, guid: f7c79e3194127d64eb5474288cbc5f9c,
-        type: 3}
-      propertyPath: sceneChangeTime
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3582412785067884259, guid: f7c79e3194127d64eb5474288cbc5f9c,
         type: 3}
@@ -748,4 +738,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5d4e4cd5d3f0574b94f1915300e1126, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 2236760825941965011}
