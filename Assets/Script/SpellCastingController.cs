@@ -6,6 +6,8 @@ public class SpellCastingController : MonoBehaviour
     public Animator playerAnimator; // Animator for the player's animations
     public Animator spellAnimator;  // Animator for the spell's animations
     public GameObject player;
+    public GameObject PauseMenu;
+    private PauseMenuController pauseMenuController;
     public GameObject spell; // Assuming this is the spell GameObject
     public Camera cam;
 
@@ -20,6 +22,7 @@ public class SpellCastingController : MonoBehaviour
     void Start()
     {
         playerLogic = player.GetComponent<CharacterStatLogic>();
+        pauseMenuController = PauseMenu.GetComponent<PauseMenuController>();
         BoxCollider2D collider = spell.GetComponent<BoxCollider2D>();
         if (collider != null)
         {
@@ -29,8 +32,14 @@ public class SpellCastingController : MonoBehaviour
 
     private void Update()
     {
-        if (isCasting) return;
-
+        if(pauseMenuController.isPaused)
+        {
+            return;
+        }
+        if (isCasting)
+        {
+            return;
+        }
         Vector3 mousePos = cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, cam.nearClipPlane));
         mousePos.z = 0; // Set to a fixed Z value appropriate for your game
 

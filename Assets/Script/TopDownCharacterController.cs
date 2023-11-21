@@ -9,16 +9,28 @@ namespace Cainos.PixelArtTopDown_Basic
         private Animator animator;
         public Camera cam;
         public Rigidbody2D rb;
+        public GameObject PauseMenu;
+        public string deathSceneName;
+        private PauseMenuController pauseMenuController;
+        private Vector2 movement;
+        bool flipped;
 
         private void Start()
         {
             animator = GetComponent<Animator>();
+            pauseMenuController = PauseMenu.GetComponent<PauseMenuController>();
         }
 
         private void Update()
         {
             // Calculate the direction based on input
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                pauseMenuController.PauseGame();
+            }
+
             dir = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
+            Vector2 movement = new Vector2(Input.GetAxis("Horizontal"), 0).normalized;
 
             // Set animator parameters
             animator.SetBool("IsMoving", dir != Vector2.zero);
