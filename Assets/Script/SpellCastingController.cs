@@ -12,6 +12,9 @@ public class SpellCastingController : MonoBehaviour
     [SerializeField]
     private float yPositionOffset = 1.0f; // Serialized field to adjust the Y offset in Unity Editor
 
+    public GameObject PauseMenu;
+    private PauseMenuController pauseMenuController;
+    
     private CharacterStatLogic playerLogic;
     private bool isCasting = false;
     private string currentCastingAnimation = ""; // To keep track of the current casting animation name
@@ -25,15 +28,21 @@ public class SpellCastingController : MonoBehaviour
         {
             originalColliderOffset = collider.offset; // Store the original offset
         }
+        pauseMenuController = PauseMenu.GetComponent<PauseMenuController>();
     }
 
     private void Update()
     {
-        if (isCasting) return;
-
-        Vector3 mousePos = cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, cam.nearClipPlane));
-        mousePos.z = 0; // Set to a fixed Z value appropriate for your game
-
+        if(pauseMenuController.isPaused)
+        {
+            return;
+        }
+        // If the player is casting, don't check for new spell input.
+        if (isCasting)
+        {
+            return;
+        }
+        // Check which spell is currently pressed and initiate the player's casting animation.
         if (Input.GetKeyDown(KeyCode.Z) && playerLogic.SpendMana(10))
         {
             StartCasting("1", mousePos);
