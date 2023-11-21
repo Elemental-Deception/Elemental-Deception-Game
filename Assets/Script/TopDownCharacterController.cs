@@ -4,31 +4,25 @@ namespace Cainos.PixelArtTopDown_Basic
 {
     public class TopDownCharacterController : MonoBehaviour
     {
-        public GameObject PauseMenu;
         public float speed;
         private Vector2 dir = Vector2.zero;
         private Animator animator;
-        private PauseMenuController pauseMenuController;
         public Camera cam;
         public Rigidbody2D rb;
 
         private void Start()
         {
             animator = GetComponent<Animator>();
-            pauseMenuController = PauseMenu.GetComponent<PauseMenuController>();
         }
 
         private void Update()
         {
-            Vector2 movement = new Vector2(Input.GetAxis("Horizontal"), 0).normalized;
-            dir = Vector2.zero;
-            if (Input.GetKey(KeyCode.A))
-            {
-                dir.x = -1;
-                animator.SetInteger("Direction", 3);
-                flipped = movement.x < 0;
-            }
-            else if (Input.GetKey(KeyCode.D))
+            // Calculate the direction based on input
+            dir = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
+
+            // Set animator parameters
+            animator.SetBool("IsMoving", dir != Vector2.zero);
+            if (dir != Vector2.zero)
             {
                 animator.SetFloat("Horizontal", dir.x);
                 animator.SetFloat("Vertical", dir.y);
