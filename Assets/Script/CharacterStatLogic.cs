@@ -30,11 +30,14 @@ public class CharacterStatLogic : MonoBehaviour
     }
 
     public CharacterStats characterStats = new CharacterStats();
+    private GameObject player;
+    private Vector3 damageVector;
     private Animator animator;
     private bool isDead = false;
 
     public void Start()
     {
+        player = GameObject.FindWithTag("Player");
         animator = GetComponent<Animator>();
     }
 
@@ -47,6 +50,8 @@ public class CharacterStatLogic : MonoBehaviour
     public void TakeDmg(int damage)
     {
         characterStats.Health -= damage;
+        damageVector = new Vector3(player.transform.position.x, player.transform.position.y + (float)0.5, player.transform.position.z);
+        DynamicTextManager.CreateText2D(damageVector, damage.ToString(), DynamicTextManager.defaultData);
         animator.SetTrigger("Hurt");
         if (characterStats.Health <= 0 && !isDead)
         {
