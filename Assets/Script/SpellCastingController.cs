@@ -11,8 +11,8 @@ public class SpellCastingController : MonoBehaviour
     public GameObject spell; // Assuming this is the spell GameObject
     public Camera cam;
 
-    [SerializeField]
-    private float yPositionOffset = 1.0f; // Serialized field to adjust the Y offset in Unity Editor
+    [SerializeField] private float boxColliderOffset;
+    [SerializeField] private float yPositionOffset = 1.0f; // Serialized field to adjust the Y offset in Unity Editor
                                           // 
     private CharacterStatLogic playerLogic;
     private bool isCasting = false;
@@ -72,7 +72,7 @@ public class SpellCastingController : MonoBehaviour
         BoxCollider2D collider = spell.GetComponent<BoxCollider2D>();
         if (collider != null)
         {
-            collider.offset = new Vector2(originalColliderOffset.x, originalColliderOffset.y + yPositionOffset);
+            collider.offset = new Vector2(0f, -1.5f);
         }
     }
 

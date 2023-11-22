@@ -195,6 +195,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6408323445733133921, guid: d7cea23bf7580b14183c6c3a9a9126cd,
         type: 3}
+      propertyPath: enemy
+      value: 
+      objectReference: {fileID: 6148563410856659796}
+    - target: {fileID: 6408323445733133921, guid: d7cea23bf7580b14183c6c3a9a9126cd,
+        type: 3}
       propertyPath: EnemyXP
       value: 10
       objectReference: {fileID: 0}
@@ -203,6 +208,12 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 3623133225012413925}
+    - target: {fileID: 6408323445733133921, guid: d7cea23bf7580b14183c6c3a9a9126cd,
+        type: 3}
+      propertyPath: XPTextData
+      value: 
+      objectReference: {fileID: 11400000, guid: 888603d21ae43284da4c7e0c0286ec6e,
+        type: 2}
     - target: {fileID: 7009636040751970456, guid: d7cea23bf7580b14183c6c3a9a9126cd,
         type: 3}
       propertyPath: m_LocalPosition.x

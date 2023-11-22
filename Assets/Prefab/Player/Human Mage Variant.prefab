@@ -120,6 +120,11 @@ PrefabInstance:
       propertyPath: spellAnimator
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 5674357420884093740, guid: f7c79e3194127d64eb5474288cbc5f9c,
+        type: 3}
+      propertyPath: boxColliderOffset
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7010932304033026273, guid: f7c79e3194127d64eb5474288cbc5f9c,
         type: 3}
       propertyPath: m_Size.x
