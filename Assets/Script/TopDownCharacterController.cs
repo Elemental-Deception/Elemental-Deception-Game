@@ -36,8 +36,6 @@ namespace Cainos.PixelArtTopDown_Basic
             animator.SetBool("IsMoving", dir != Vector2.zero);
             if (dir != Vector2.zero)
             {
-                animator.SetFloat("Horizontal", dir.x);
-                animator.SetFloat("Vertical", dir.y);
 
                 // Flip sprite based on direction
                 if (dir.x != 0)

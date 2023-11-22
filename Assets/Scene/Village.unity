@@ -33833,11 +33833,6 @@ PrefabInstance:
       propertyPath: spellAnimator
       value: 
       objectReference: {fileID: 128907463}
-    - target: {fileID: 6582263397503104335, guid: 5e2d7cc0b7f7891409c417654f44dbd5,
-        type: 3}
-      propertyPath: m_Interpolate
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8009997308357498198, guid: 5e2d7cc0b7f7891409c417654f44dbd5,
         type: 3}
       propertyPath: cam
@@ -33848,14 +33843,8 @@ PrefabInstance:
       propertyPath: PauseMenu
       value: 
       objectReference: {fileID: 388306799}
-    - target: {fileID: 8505495331109161961, guid: 5e2d7cc0b7f7891409c417654f44dbd5,
-        type: 3}
-      propertyPath: m_Interpolate
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 3192064075382742054, guid: 5e2d7cc0b7f7891409c417654f44dbd5, type: 3}
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e2d7cc0b7f7891409c417654f44dbd5, type: 3}
