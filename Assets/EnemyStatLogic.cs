@@ -14,7 +14,9 @@ public class EnemyStatLogic : MonoBehaviour
     public float EnemyXP;
     public Image healthBar;
     public GameObject enemy;
+    public DynamicTextData XPTextData;
     private GameObject player;
+    private Vector3 XPVector;
     private Vector3 damageVector;
     private CharacterStatLogic playerLogic;
     private EnemyStats enemyStats = new EnemyStats();
@@ -58,6 +60,8 @@ public class EnemyStatLogic : MonoBehaviour
     public void DestroyEnemy(float delay)
     {
         playerLogic.GainXP(EnemyXP);
+        XPVector = new Vector3(enemy.transform.position.x, enemy.transform.position.y + (float)0.5, enemy.transform.position.z);
+        DynamicTextManager.CreateText2D(XPVector, "+" + EnemyXP.ToString() + " XP", XPTextData);
         Destroy(gameObject, delay);
     }
 
