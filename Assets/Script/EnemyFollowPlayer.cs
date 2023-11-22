@@ -11,6 +11,7 @@ public class EnemyFollowPlayer : MonoBehaviour
     private Rigidbody2D rb;
 
     private const string isWalkingParam = "IsMoving";
+    private const string attackParam = "Attack";
 
     private void Start()
     {
@@ -23,29 +24,42 @@ public class EnemyFollowPlayer : MonoBehaviour
     {
         float distanceToPlayer = Vector2.Distance(transform.position, player.position);
 
-        if (distanceToPlayer <= attackRange)
+        // Movement logic
+        if (distanceToPlayer <= followDistance && distanceToPlayer > attackRange)
         {
-            // Attack logic here
-            animator.SetTrigger("Attack");
-            rb.velocity = Vector2.zero; // Stop moving when attacking
-        }
-        else if (distanceToPlayer <= followDistance)
-        {
-            // Follow logic here
             Vector2 direction = (player.position - transform.position).normalized;
             rb.velocity = direction * speed;
-            if (rb.velocity.x != 0)
-            {
-                transform.localScale = new Vector3(Mathf.Sign(rb.velocity.x) * Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
-            }
+
+            // Rotate the parent enemy based on the velocity direction
+            RotateParentBasedOnVelocity(rb.velocity.x);
+
             animator.SetBool(isWalkingParam, true);
         }
         else
         {
-            // Idle logic here
             rb.velocity = Vector2.zero;
             animator.SetBool(isWalkingParam, false);
         }
+
+        // Attack logic
+        if (distanceToPlayer <= attackRange)
+        {
+            animator.SetTrigger(attackParam);
+        }
+        else
+        {
+            animator.ResetTrigger(attackParam);
+        }
+    }
+
+    private void RotateParentBasedOnVelocity(float velocityX)
+    {
+        Transform parentTransform = transform.parent;
+
+        if ((velocityX < 0 && parentTransform.eulerAngles.y != 180) ||
+            (velocityX > 0 && parentTransform.eulerAngles.y != 0))
+        {
+            parentTransform.eulerAngles = new Vector3(0, velocityX < 0 ? 180 : 0, 0);
+        }
     }
 }
-
