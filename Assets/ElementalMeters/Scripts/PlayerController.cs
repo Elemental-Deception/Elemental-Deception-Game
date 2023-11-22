@@ -20,7 +20,6 @@ public class PlayerController : MonoBehaviour
         rb2D = GetComponent<Rigidbody2D>();
         currentHealth = maxHealth; //meter code
         healthMeter.SetMaxHealth(maxHealth); //meter code
-
     }
 
     // Update is called once per frame

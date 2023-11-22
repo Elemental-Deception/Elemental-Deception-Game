@@ -64,6 +64,7 @@
     <Compile Include="Assets\2D Progress Bar Toolkit\Scripts\ClassicProgressBar.cs" />
     <Compile Include="Assets\Script\SpriteColorAnimation.cs" />
     <Compile Include="Assets\Script\EnemySpawnLogic.cs" />
+    <Compile Include="Assets\Script\PauseMenuController.cs" />
     <Compile Include="Assets\ElementalMeters\Scripts\MeterScript.cs" />
     <Compile Include="Assets\Script\PlayerSpell.cs" />
     <Compile Include="Assets\charac.cs" />
@@ -76,6 +77,7 @@
     <Compile Include="Assets\ElementalMeters\Scripts\MeterButtons.cs" />
     <Compile Include="Assets\Script\SpellCastingController.cs" />
     <Compile Include="Assets\Script\MenuController.cs" />
+    <Compile Include="Assets\Script\PlayerCharacter.cs" />
     <Compile Include="Assets\Script\PropsAltar.cs" />
     <Compile Include="Assets\HealthBarUI2.cs" />
     <Compile Include="Assets\Script\CharacterStatLogic.cs" />

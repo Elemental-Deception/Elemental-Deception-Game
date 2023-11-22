@@ -4,9 +4,11 @@ namespace Cainos.PixelArtTopDown_Basic
 {
     public class TopDownCharacterController : MonoBehaviour
     {
+        public GameObject PauseMenu;
         public float speed;
         private Vector2 dir = Vector2.zero;
         private Animator animator;
+        private PauseMenuController pauseMenuController;
         public Camera cam;
         public Rigidbody2D rb;
         public GameObject PauseMenu;
