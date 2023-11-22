@@ -1,19 +1,15 @@
 using UnityEngine;
-using System.Collections;
 
 public class EnemyFollowPlayer : MonoBehaviour
 {
-
-    private Transform player;  // Reference to the player's transform
-    public Transform Enemy;
-    public float speed = 5.0f;  // Speed at which the enemy moves
-    public float followDistance = 5.0f;  // The distance at which the enemy starts following the player.
+    private Transform player;
+    public float speed = 5.0f;
+    public float followDistance = 5.0f;
     public float attackRange = 0.8f;
 
     private Animator animator;
     private Rigidbody2D rb;
 
-    // Animator parameter names, adjust these to match your setup in the Animator
     private const string isWalkingParam = "IsMoving";
 
     private void Start()
@@ -27,36 +23,29 @@ public class EnemyFollowPlayer : MonoBehaviour
     {
         float distanceToPlayer = Vector2.Distance(transform.position, player.position);
 
-        if (distanceToPlayer <= followDistance)
+        if (distanceToPlayer <= attackRange)
         {
+            // Attack logic here
+            animator.SetTrigger("Attack");
+            rb.velocity = Vector2.zero; // Stop moving when attacking
+        }
+        else if (distanceToPlayer <= followDistance)
+        {
+            // Follow logic here
             Vector2 direction = (player.position - transform.position).normalized;
             rb.velocity = direction * speed;
-            if (rb.velocity.x > 0.1f)
+            if (rb.velocity.x != 0)
             {
-                flip(true);
+                transform.localScale = new Vector3(Mathf.Sign(rb.velocity.x) * Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
             }
-            else if (rb.velocity.x < -0.1f)
-            {
-                flip(false);
-            }
-            // Set animation state to walking (or whichever animation you want)
             animator.SetBool(isWalkingParam, true);
         }
-        else if (distanceToPlayer <= attackRange)
+        else
         {
-            animator.SetTrigger("Attack");
-        }
-        else{
+            // Idle logic here
             rb.velocity = Vector2.zero;
-
-            // Set animation state to idle or whichever state when the enemy isn't walking
             animator.SetBool(isWalkingParam, false);
         }
     }
-
-    // Optionally, if you want the 2D sprite to face the direction of movement:
-    private void flip(bool flipped)
-    {
-        Enemy.rotation = Quaternion.Euler(new Vector3(0f, flipped ? 180f : 0f, 0f));
-    }
 }
+

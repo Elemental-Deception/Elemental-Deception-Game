@@ -58,41 +58,78 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.10f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\SpriterDotNet\Lib\Providers\DefaultFrameDataProvider.cs" />
     <Compile Include="Assets\Script\CameraFollow.cs" />
     <Compile Include="Assets\Script\DoorScript.cs" />
     <Compile Include="Assets\Script\EnemySpellController.cs" />
     <Compile Include="Assets\2D Progress Bar Toolkit\Scripts\ClassicProgressBar.cs" />
+    <Compile Include="Assets\Script\EnemyTouchDmg.cs" />
+    <Compile Include="Assets\SpriterDotNet\IContentLoader.cs" />
     <Compile Include="Assets\Script\SpriteColorAnimation.cs" />
     <Compile Include="Assets\Script\EnemySpawnLogic.cs" />
     <Compile Include="Assets\Script\PauseMenuController.cs" />
     <Compile Include="Assets\ElementalMeters\Scripts\MeterScript.cs" />
+    <Compile Include="Assets\SpriterDotNet\SpriterImporter.cs" />
     <Compile Include="Assets\Script\PlayerSpell.cs" />
+    <Compile Include="Assets\SpriterDotNet\Lib\ISpriterParser.cs" />
+    <Compile Include="Assets\SpriterDotNet\Lib\Config.cs" />
+    <Compile Include="Assets\SpriterDotNet\Lib\Animator.cs" />
+    <Compile Include="Assets\SpriterDotNetExamples\Controller.cs" />
     <Compile Include="Assets\charac.cs" />
+    <Compile Include="Assets\SpriterDotNet\DefaultContentLoader.cs" />
+    <Compile Include="Assets\SpriterDotNet\Lib\Providers\DefaultProviderFactory.cs" />
+    <Compile Include="Assets\SpriterDotNet\Lib\Parser\XmlSpriterParser.cs" />
+    <Compile Include="Assets\SpriterDotNet\Lib\Providers\DefaultAssetProvider.cs" />
+    <Compile Include="Assets\SpriterDotNet\Lib\FrameData.cs" />
+    <Compile Include="Assets\SpriterDotNet\SpriterDotNetBehaviour.cs" />
     <Compile Include="Assets\Script\TopDownCharacterController.cs" />
+    <Compile Include="Assets\SpriterDotNet\Lib\ISpriterPreprocessor.cs" />
+    <Compile Include="Assets\SpriterDotNet\Lib\SpriterReader.cs" />
     <Compile Include="Assets\2D Progress Bar Toolkit\Scripts\CircularProgressBar.cs" />
     <Compile Include="Assets\Script\LayerTrigger.cs" />
+    <Compile Include="Assets\SpriterDotNetExamples\TestSpriterImportHook.cs" />
+    <Compile Include="Assets\SpriterDotNet\Lib\IAssetProvider.cs" />
+    <Compile Include="Assets\SpriterDotNet\Lib\Helpers\MathHelper.cs" />
+    <Compile Include="Assets\SpriterDotNet\Lib\FrameDataCalculator.cs" />
+    <Compile Include="Assets\SpriterDotNet\SpriterDotNetBehaviourEditor.cs" />
     <Compile Include="Assets\ElementalMeters\Scripts\PlayerController.cs" />
+    <Compile Include="Assets\SpriterDotNet\UnityAnimator.cs" />
+    <Compile Include="Assets\SpriterDotNet\Lib\IProviderFactory.cs" />
+    <Compile Include="Assets\SpriterDotNet\Lib\SpriterModel.cs" />
+    <Compile Include="Assets\SpriterDotNet\SpriterData.cs" />
     <Compile Include="Assets\Script\EnemyFollowPlayer.cs" />
+    <Compile Include="Assets\SpriterDotNet\Lib\TexturePackerModel.cs" />
+    <Compile Include="Assets\SpriterDotNet\Lib\Providers\SnapshotFrameDataProvider.cs" />
     <Compile Include="Assets\Script\EnemySpell.cs" />
     <Compile Include="Assets\ElementalMeters\Scripts\MeterButtons.cs" />
     <Compile Include="Assets\Script\SpellCastingController.cs" />
+    <Compile Include="Assets\SpriterDotNet\Lib\Helpers\SpriterHelper.cs" />
+    <Compile Include="Assets\SpriterDotNet\Lib\Parsers\XmlSpriterParser.cs" />
     <Compile Include="Assets\Script\MenuController.cs" />
     <Compile Include="Assets\Script\PlayerCharacter.cs" />
+    <Compile Include="Assets\SpriterDotNet\Lib\ObjectPool.cs" />
     <Compile Include="Assets\Script\PropsAltar.cs" />
+    <Compile Include="Assets\SpriterDotNet\Lib\Helpers\DictionaryHelper.cs" />
+    <Compile Include="Assets\SpriterDotNet\SpriterRuntimeImporter.cs" />
     <Compile Include="Assets\HealthBarUI2.cs" />
     <Compile Include="Assets\Script\CharacterStatLogic.cs" />
+    <Compile Include="Assets\SpriterDotNet\Lib\Preprocessors\SpriterInitPreprocessor.cs" />
+    <Compile Include="Assets\SpriterDotNet\Lib\IFrameDataProvider.cs" />
     <Compile Include="Assets\EnemyStatLogic.cs" />
     <Compile Include="Assets\Script\GameOverController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
+    <None Include="Assets\2DElementals\_TXT\LICENSES.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
     <None Include="Assets\Changelog.txt" />
+    <None Include="Assets\SpriterDotNetExamples\Scml\GreyGuy\Copyright_Information_Please_Read.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
     <None Include="Assets\Shader\SH Sprite Shadow.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
+    <None Include="Assets\SpriterDotNetExamples\Scml\GreyGuyPlus\Copyright_Information_Please_Read.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
@@ -110,6 +147,7 @@
     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
     <None Include="Assets\Art By Kandles\Human Mage\ReadMe.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
+    <None Include="Assets\2DElementals\_TXT\readme.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
   </ItemGroup>
   <ItemGroup>

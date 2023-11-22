@@ -123,6 +123,11 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: -0.26702198
       objectReference: {fileID: 0}
+    - target: {fileID: 598674111884871643, guid: d7cea23bf7580b14183c6c3a9a9126cd,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1234923088248960834, guid: d7cea23bf7580b14183c6c3a9a9126cd,
         type: 3}
       propertyPath: m_SpriteSortPoint
@@ -224,6 +229,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 8108147119918113437}
+    - targetCorrespondingSourceObject: {fileID: 5295584969964566577, guid: d7cea23bf7580b14183c6c3a9a9126cd,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4789196398465579167}
   m_SourcePrefab: {fileID: 100100000, guid: d7cea23bf7580b14183c6c3a9a9126cd, type: 3}
 --- !u!4 &3363388813132400616 stripped
 Transform:
@@ -249,9 +258,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f39f2364e87975d46942f116bccd1f9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
   Enemy: {fileID: 3363388813132400616}
   attack: {fileID: 1654092722517772226}
+--- !u!114 &4789196398465579167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6148563410856659796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d1b38978166d8b4dbebf20e0eabdf00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7875792574499960560
 PrefabInstance:
   m_ObjectHideFlags: 0
