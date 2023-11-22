@@ -13,10 +13,7 @@ public class SpellCastingController : MonoBehaviour
 
     [SerializeField]
     private float yPositionOffset = 1.0f; // Serialized field to adjust the Y offset in Unity Editor
-
-    public GameObject PauseMenu;
-    private PauseMenuController pauseMenuController;
-    
+                                          // 
     private CharacterStatLogic playerLogic;
     private bool isCasting = false;
     private string currentCastingAnimation = ""; // To keep track of the current casting animation name

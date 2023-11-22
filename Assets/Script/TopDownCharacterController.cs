@@ -11,9 +11,7 @@ namespace Cainos.PixelArtTopDown_Basic
         private PauseMenuController pauseMenuController;
         public Camera cam;
         public Rigidbody2D rb;
-        public GameObject PauseMenu;
         public string deathSceneName;
-        private PauseMenuController pauseMenuController;
         private Vector2 movement;
         bool flipped;
 
