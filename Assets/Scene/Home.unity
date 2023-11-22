@@ -649,6 +649,12 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &115590778 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3693393142468495833, guid: f7c79e3194127d64eb5474288cbc5f9c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1501530645}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &187875319
 GameObject:
   m_ObjectHideFlags: 0
@@ -5016,9 +5022,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5674357420884093740, guid: f7c79e3194127d64eb5474288cbc5f9c,
         type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 601076436}
+    - target: {fileID: 5674357420884093740, guid: f7c79e3194127d64eb5474288cbc5f9c,
+        type: 3}
+      propertyPath: spell
+      value: 
+      objectReference: {fileID: 115590778}
+    - target: {fileID: 5674357420884093740, guid: f7c79e3194127d64eb5474288cbc5f9c,
+        type: 3}
       propertyPath: PauseMenu
       value: 
       objectReference: {fileID: 224790498}
+    - target: {fileID: 6486624953103859001, guid: f7c79e3194127d64eb5474288cbc5f9c,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1900778010}
     - target: {fileID: 8081195595284689011, guid: f7c79e3194127d64eb5474288cbc5f9c,
         type: 3}
       propertyPath: PauseMenu
