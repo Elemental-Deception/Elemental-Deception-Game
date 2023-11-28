@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeMonkey_HealthSystem", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeMonkey_HealthSystem_Editor", "CodeMonkey_HealthSystem_Editor.csproj", "{26EB4738-12B1-B47C-559D-10DE8312517A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor", "Assembly-CSharp-Editor.csproj", "{8FC3C64E-E513-7589-D3E6-C44DA63FE378}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +27,10 @@ Global
 		{26EB4738-12B1-B47C-559D-10DE8312517A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{26EB4738-12B1-B47C-559D-10DE8312517A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{26EB4738-12B1-B47C-559D-10DE8312517A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8FC3C64E-E513-7589-D3E6-C44DA63FE378}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FC3C64E-E513-7589-D3E6-C44DA63FE378}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FC3C64E-E513-7589-D3E6-C44DA63FE378}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FC3C64E-E513-7589-D3E6-C44DA63FE378}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

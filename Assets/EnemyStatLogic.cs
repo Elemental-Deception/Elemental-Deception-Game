@@ -13,7 +13,11 @@ public class EnemyStatLogic : MonoBehaviour
 
     public float EnemyXP;
     public Image healthBar;
-    public GameObject player;
+    public GameObject enemy;
+    public DynamicTextData XPTextData;
+    private GameObject player;
+    private Vector3 XPVector;
+    private Vector3 damageVector;
     private CharacterStatLogic playerLogic;
     private EnemyStats enemyStats = new EnemyStats();
     private Animator animator;
@@ -22,13 +26,17 @@ public class EnemyStatLogic : MonoBehaviour
 
     public void Start()
     {
+        player = GameObject.FindWithTag("Player");
         playerLogic = player.GetComponent<CharacterStatLogic>();
         animator = GetComponent<Animator>();
+
     }
 
     public void TakeDmg(int damage)
     {
         enemyStats.Health -= damage;
+        damageVector = new Vector3(enemy.transform.position.x, enemy.transform.position.y + (float)0.5, enemy.transform.position.z);
+        DynamicTextManager.CreateText2D(damageVector, damage.ToString(), DynamicTextManager.defaultData);
         animator.SetTrigger("Hurt");
         if (enemyStats.Health <= 0 && !isDead)
         {
@@ -52,6 +60,8 @@ public class EnemyStatLogic : MonoBehaviour
     public void DestroyEnemy(float delay)
     {
         playerLogic.GainXP(EnemyXP);
+        XPVector = new Vector3(enemy.transform.position.x, enemy.transform.position.y + (float)0.5, enemy.transform.position.z);
+        DynamicTextManager.CreateText2D(XPVector, "+" + EnemyXP.ToString() + " XP", XPTextData);
         Destroy(gameObject, delay);
     }
 

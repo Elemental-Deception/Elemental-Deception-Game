@@ -14,7 +14,13 @@ public class CharacterStatLogic : MonoBehaviour
     public int sceneChangeTime;
     public string sceneName;
     public TMP_Text LevelText;
-    public TMP_Text ShadowText;
+    public TMP_Text LevelShadowText;
+    public TMP_Text HealthText;
+    public TMP_Text HealthShadowText;
+    public TMP_Text ManaText;
+    public TMP_Text ManaShadowText;
+    public TMP_Text XPText;
+    public TMP_Text XPShadowText;
     public double ManaFactor;
     public class CharacterStats
     {
@@ -30,27 +36,40 @@ public class CharacterStatLogic : MonoBehaviour
     }
 
     public CharacterStats characterStats = new CharacterStats();
+    private GameObject player;
+    public DynamicTextData XPTextData;
+    private Vector3 damageVector;
+    private Vector3 XPVector;
     private Animator animator;
     private bool isDead = false;
+    private float overflow;
 
     public void Start()
     {
+        player = GameObject.FindWithTag("Player");
         animator = GetComponent<Animator>();
     }
 
     private void FixedUpdate()
     {
         double ManaDelta = ManaFactor * characterStats.ManaRegenSpeed * Time.deltaTime;
+        ManaText.SetText((int)(Math.Round(characterStats.Mana)) + "/" + (int)(Math.Round(characterStats.MaxMana)));
+        ManaShadowText.SetText((int)(Math.Round(characterStats.Mana)) + "/" + (int)(Math.Round(characterStats.MaxMana)));
         GainMana(ManaDelta);
     }
 
     public void TakeDmg(int damage)
     {
         characterStats.Health -= damage;
+        damageVector = new Vector3(player.transform.position.x, player.transform.position.y + (float)0.5, player.transform.position.z);
+        DynamicTextManager.CreateText2D(damageVector, damage.ToString(), DynamicTextManager.defaultData);
         animator.SetTrigger("Hurt");
         if (characterStats.Health <= 0 && !isDead)
         {
+            characterStats.Health = 0;
             HealthBar.fillAmount = 0f;
+            HealthText.SetText(0 + "/" + (int)(Math.Round(characterStats.MaxHealth)));
+            HealthShadowText.SetText(0 + "/" + (int)(Math.Round(characterStats.MaxHealth)));
             animator.SetTrigger("Dead");  // Assuming you have a trigger named "Die" to play death animation
             animator.SetBool("IsAlive", false);
             isDead = true; // Mark character as dead
@@ -59,6 +78,8 @@ public class CharacterStatLogic : MonoBehaviour
         else
         {
             HealthBar.fillAmount = characterStats.Health / characterStats.MaxHealth;
+            HealthText.SetText((int)(Math.Round(characterStats.Health)) + "/" + (int)(Math.Round(characterStats.MaxHealth)));
+            HealthShadowText.SetText((int)(Math.Round(characterStats.Health)) + "/" + (int)(Math.Round(characterStats.MaxHealth)));
         }
     }
 
@@ -74,6 +95,8 @@ public class CharacterStatLogic : MonoBehaviour
         {
             characterStats.Mana -= manaCost;
             ManaBar.fillAmount = characterStats.Mana / characterStats.MaxMana;
+            ManaText.SetText((int)(Math.Round(characterStats.Mana)) + "/" + (int)(Math.Round(characterStats.MaxMana)));
+            ManaShadowText.SetText((int)(Math.Round(characterStats.Mana)) + "/" + (int)(Math.Round(characterStats.MaxMana)));
             return true;
         }
         else
@@ -111,6 +134,8 @@ public class CharacterStatLogic : MonoBehaviour
                 characterStats.Health += (characterStats.MaxHealth - characterStats.Health);
             }
             HealthBar.fillAmount = characterStats.Health / characterStats.MaxHealth;
+            HealthText.SetText((int)(Math.Round(characterStats.Health)) + "/" + (int)(Math.Round(characterStats.MaxHealth)));
+            HealthShadowText.SetText((int)(Math.Round(characterStats.Health)) + "/" + (int)(Math.Round(characterStats.MaxHealth)));
         }
     }
 
@@ -132,6 +157,7 @@ public class CharacterStatLogic : MonoBehaviour
 
     public void GainXP(float XPDelta)
     {
+        overflow = 0;
         if(!isDead && (XPBar.fillAmount < 1f))
         {
             if(((characterStats.XP + (float)XPDelta) / characterStats.MaxXP) < 1f)
@@ -140,9 +166,16 @@ public class CharacterStatLogic : MonoBehaviour
             }
             else
             {
+                overflow = (XPDelta - (characterStats.MaxXP - characterStats.XP));
                 LevelUp();
             }
             XPBar.fillAmount = characterStats.XP / characterStats.MaxXP;
+            XPText.SetText((int)(Math.Round(characterStats.XP)) + "/" + (int)(Math.Round(characterStats.MaxXP)));
+            XPShadowText.SetText((int)(Math.Round(characterStats.XP)) + "/" + (int)(Math.Round(characterStats.MaxXP)));
+            if(overflow != 0)
+            {
+                GainXP(overflow);
+            }
         }
     }
 
@@ -150,9 +183,13 @@ public class CharacterStatLogic : MonoBehaviour
     {
         characterStats.XP = 0;
         XPBar.fillAmount = 0f;
+        XPText.SetText((int)(Math.Round(characterStats.XP)) + "/" + (int)(Math.Round(characterStats.MaxXP)));
+        XPShadowText.SetText((int)(Math.Round(characterStats.XP)) + "/" + (int)(Math.Round(characterStats.MaxXP)));
+        XPVector = new Vector3(player.transform.position.x, player.transform.position.y + (float)0.5, player.transform.position.z);
+        DynamicTextManager.CreateText2D(XPVector, "Level Up", XPTextData);
         characterStats.Level++;
         LevelText.SetText("Level: <color=#32CD32>" + (int)(Math.Round(characterStats.Level)) + "</color>");
-        ShadowText.SetText("Level: " + (int)(Math.Round(characterStats.Level)));
+        LevelShadowText.SetText("Level: " + (int)(Math.Round(characterStats.Level)));
         characterStats.DamageMultiplier = (float)1.2 * characterStats.DamageMultiplier;
         characterStats.MaxXP = (float)1.2 * characterStats.MaxXP;
         characterStats.MaxHealth = (float)1.2 * characterStats.MaxHealth;
@@ -161,6 +198,10 @@ public class CharacterStatLogic : MonoBehaviour
         characterStats.Health = characterStats.MaxHealth;
         characterStats.Mana = characterStats.MaxMana;
         HealthBar.fillAmount = 1f;
+        HealthText.SetText((int)(Math.Round(characterStats.Health)) + "/" + (int)(Math.Round(characterStats.MaxHealth)));
+        HealthShadowText.SetText((int)(Math.Round(characterStats.Health)) + "/" + (int)(Math.Round(characterStats.MaxHealth)));
         ManaBar.fillAmount = 1f;
+        ManaText.SetText((int)(Math.Round(characterStats.Mana)) + "/" + (int)(Math.Round(characterStats.MaxMana)));
+        ManaShadowText.SetText((int)(Math.Round(characterStats.Mana)) + "/" + (int)(Math.Round(characterStats.MaxMana)));
     }
 }

@@ -8,7 +8,6 @@ public class PlayerController : MonoBehaviour
     public MeterScript healthMeter; //meter code
     public int currentHealth; //meter code
     public int maxHealth = 80; //meter code
-    float movementSpeed = 10f;
     [SerializeField]
     private float speed;
     private Rigidbody2D rb2D;
@@ -20,7 +19,6 @@ public class PlayerController : MonoBehaviour
         rb2D = GetComponent<Rigidbody2D>();
         currentHealth = maxHealth; //meter code
         healthMeter.SetMaxHealth(maxHealth); //meter code
-
     }
 
     // Update is called once per frame
