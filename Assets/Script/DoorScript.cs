@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class DoorScript : MonoBehaviour
 {
+    public string scene1; 
+    public string scene2;
     public GameObject player;
     public Sprite OpenDoorImage;
     public Sprite CloseDoorImage;
@@ -44,11 +46,11 @@ public class DoorScript : MonoBehaviour
 
     public void SceneSwitcher()
     {
-        if(SceneManager.GetSceneByName("Home").isLoaded){
-            SceneManager.LoadScene("Village");
+        if(SceneManager.GetSceneByName(scene1).isLoaded){
+            SceneManager.LoadScene(scene2);
         }
-        if(SceneManager.GetSceneByName("Village").isLoaded){
-            SceneManager.LoadScene("Home");
+        if(SceneManager.GetSceneByName(scene2).isLoaded){
+            SceneManager.LoadScene(scene1);
         }
     }
 
