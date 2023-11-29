@@ -7149,12 +7149,12 @@ PrefabInstance:
         type: 3}
       propertyPath: XPBar
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1512591177}
     - target: {fileID: 535437208046179283, guid: 5e2d7cc0b7f7891409c417654f44dbd5,
         type: 3}
       propertyPath: XPText
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1690650346}
     - target: {fileID: 535437208046179283, guid: 5e2d7cc0b7f7891409c417654f44dbd5,
         type: 3}
       propertyPath: Element
@@ -7164,27 +7164,27 @@ PrefabInstance:
         type: 3}
       propertyPath: ManaBar
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1002150280}
     - target: {fileID: 535437208046179283, guid: 5e2d7cc0b7f7891409c417654f44dbd5,
         type: 3}
       propertyPath: ManaText
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1181165090}
     - target: {fileID: 535437208046179283, guid: 5e2d7cc0b7f7891409c417654f44dbd5,
         type: 3}
       propertyPath: HealthBar
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2067283010}
     - target: {fileID: 535437208046179283, guid: 5e2d7cc0b7f7891409c417654f44dbd5,
         type: 3}
       propertyPath: LevelText
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1776092272}
     - target: {fileID: 535437208046179283, guid: 5e2d7cc0b7f7891409c417654f44dbd5,
         type: 3}
       propertyPath: HealthText
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2005855904}
     - target: {fileID: 535437208046179283, guid: 5e2d7cc0b7f7891409c417654f44dbd5,
         type: 3}
       propertyPath: XPTextData
@@ -7195,22 +7195,22 @@ PrefabInstance:
         type: 3}
       propertyPath: XPShadowText
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1217658539}
     - target: {fileID: 535437208046179283, guid: 5e2d7cc0b7f7891409c417654f44dbd5,
         type: 3}
       propertyPath: ManaShadowText
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 692604881}
     - target: {fileID: 535437208046179283, guid: 5e2d7cc0b7f7891409c417654f44dbd5,
         type: 3}
       propertyPath: LevelShadowText
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1047316812}
     - target: {fileID: 535437208046179283, guid: 5e2d7cc0b7f7891409c417654f44dbd5,
         type: 3}
       propertyPath: HealthShadowText
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 563571611}
     - target: {fileID: 2234047606340614277, guid: 5e2d7cc0b7f7891409c417654f44dbd5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7270,32 +7270,32 @@ PrefabInstance:
         type: 3}
       propertyPath: cam
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1138216061}
     - target: {fileID: 5886284486244240905, guid: 5e2d7cc0b7f7891409c417654f44dbd5,
         type: 3}
       propertyPath: spell
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1563127194}
     - target: {fileID: 5886284486244240905, guid: 5e2d7cc0b7f7891409c417654f44dbd5,
         type: 3}
       propertyPath: PauseMenu
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 26895883}
     - target: {fileID: 5886284486244240905, guid: 5e2d7cc0b7f7891409c417654f44dbd5,
         type: 3}
       propertyPath: spellAnimator
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1379489240}
     - target: {fileID: 8009997308357498198, guid: 5e2d7cc0b7f7891409c417654f44dbd5,
         type: 3}
       propertyPath: cam
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1138216061}
     - target: {fileID: 8009997308357498198, guid: 5e2d7cc0b7f7891409c417654f44dbd5,
         type: 3}
       propertyPath: PauseMenu
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 26895883}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7461,6 +7461,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dbeab85cbe3b90b41a444794aab794ef, type: 3}
+--- !u!95 &1379489240 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 95316550012221282, guid: 23d8863d708ffe14d8c50765b2ce41a6,
+    type: 3}
+  m_PrefabInstance: {fileID: 1563127193}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1423998364
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8106,7 +8112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5d4e4cd5d3f0574b94f1915300e1126, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 1312955179}
 --- !u!61 &1563127197
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -15845,6 +15851,18 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf462882706828c44a4465986b6fb8d2, type: 3}
+--- !u!114 &2067283010 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6848739073536652053, guid: f1419c2a3f5ecf44e824039f908fea60,
+    type: 3}
+  m_PrefabInstance: {fileID: 556167660}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2067997753
 GameObject:
   m_ObjectHideFlags: 0
