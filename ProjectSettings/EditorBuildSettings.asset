@@ -30,6 +30,6 @@ EditorBuildSettings:
     path: Assets/Scene/Sand Village.unity
     guid: 432ae765dcb7b5e438a4a64ea77e58d0
   - enabled: 1
-    path: Assets/Scene/SnowVillage.unity
+    path: Assets/Scene/Snow Village.unity
     guid: 2a13264c71357c243a4e743334c55e1c
   m_configObjects: {}
