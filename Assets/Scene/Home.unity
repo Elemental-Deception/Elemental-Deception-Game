@@ -4523,7 +4523,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scene1: Home
-  scene2: HomeVillage
+  scene2: Home Village
   player: {fileID: 1900778010}
   OpenDoorImage: {fileID: 21300160, guid: 29c9cded5e558164aaf8c9bf08aa1510, type: 3}
   CloseDoorImage: {fileID: 21300158, guid: 29c9cded5e558164aaf8c9bf08aa1510, type: 3}
@@ -9645,6 +9645,5 @@ SceneRoots:
   - {fileID: 541710510}
   - {fileID: 1501530645}
   - {fileID: 1125824768}
-  - {fileID: 1747184297}
   - {fileID: 304959117}
   - {fileID: 1979147359}
