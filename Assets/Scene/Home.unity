@@ -4310,7 +4310,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scene1: Home
-  scene2: Starting Village
+  scene2: HomeVillage
   player: {fileID: 1900778010}
   OpenDoorImage: {fileID: 21300160, guid: 29c9cded5e558164aaf8c9bf08aa1510, type: 3}
   CloseDoorImage: {fileID: 21300158, guid: 29c9cded5e558164aaf8c9bf08aa1510, type: 3}
