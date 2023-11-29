@@ -9161,7 +9161,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2039979131}
   - component: {fileID: 2039979132}
-  - component: {fileID: 2039979134}
   - component: {fileID: 2039979133}
   m_Layer: 0
   m_Name: Main Camera
@@ -9251,14 +9250,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 1900778013}
   lerpSpeed: 2.5
---- !u!81 &2039979134
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2039979130}
-  m_Enabled: 1
 --- !u!1 &2061849960
 GameObject:
   m_ObjectHideFlags: 0
