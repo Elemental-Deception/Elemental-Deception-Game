@@ -5242,6 +5242,11 @@ PrefabInstance:
       objectReference: {fileID: 609573479}
     - target: {fileID: 1756781823607731958, guid: f7c79e3194127d64eb5474288cbc5f9c,
         type: 3}
+      propertyPath: Element
+      value: Fire
+      objectReference: {fileID: 0}
+    - target: {fileID: 1756781823607731958, guid: f7c79e3194127d64eb5474288cbc5f9c,
+        type: 3}
       propertyPath: ManaBar
       value: 
       objectReference: {fileID: 1033647870}

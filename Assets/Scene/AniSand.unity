@@ -546,7 +546,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 291f8655dfed61e41b3195d09e6a46ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: SandVillage
+  sceneName: Sand Village
   sceneChangeTime: 4
 --- !u!95 &1006450992
 Animator:
