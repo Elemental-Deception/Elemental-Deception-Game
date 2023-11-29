@@ -23,13 +23,13 @@ public class CharacterStatLogic : MonoBehaviour
     public TMP_Text XPShadowText;
     public string Element;
     public double ManaFactor;
+    public bool IsTeleporting = false;
     public class CharacterStats
     {
         public float DamageMultiplier { get; set; } = 1;
         public float FireMultiplier { get; set; } = 1;
         public float WaterMultiplier { get; set; } = 1;
         public float EarthMultiplier { get; set; } = 1;
-        public float AirMultiplier { get; set; } = 1;
         public float Health { get; set; } = 100;
         public float MaxHealth { get; set; } = 100;
         public float Mana { get; set; } = 100;
@@ -217,29 +217,19 @@ public class CharacterStatLogic : MonoBehaviour
         {
             characterStats.FireMultiplier = (float)1;
             characterStats.WaterMultiplier = (float)0.75;
-            characterStats.EarthMultiplier = (float)1;
-            characterStats.AirMultiplier = (float)1.5;
+            characterStats.EarthMultiplier = (float)1.25;
         }
         else if(Element == "Water")
         {
             characterStats.FireMultiplier = (float)1.25;
             characterStats.WaterMultiplier = (float)1;
             characterStats.EarthMultiplier = (float)0.75;
-            characterStats.AirMultiplier = (float)1;
         }
         else if(Element == "Earth")
         {
-            characterStats.FireMultiplier = (float)1;
+            characterStats.FireMultiplier = (float)0.75;
             characterStats.WaterMultiplier = (float)1.25;
             characterStats.EarthMultiplier = (float)1;
-            characterStats.AirMultiplier = (float)0.75;
-        }
-        else if(Element == "Air")
-        {
-            characterStats.FireMultiplier = (float)0.75;
-            characterStats.WaterMultiplier = (float)1;
-            characterStats.EarthMultiplier = (float)1.25;
-            characterStats.AirMultiplier = (float)1;
         }
         else
         {

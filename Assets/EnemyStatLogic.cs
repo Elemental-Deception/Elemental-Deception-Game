@@ -48,10 +48,6 @@ public class EnemyStatLogic : MonoBehaviour
         {
             damage = (int)Math.Round(damage * playerLogic.characterStats.EarthMultiplier);
         }
-        else if(enemy.name == "AirElemental")
-        {
-            damage = (int)Math.Round(damage * playerLogic.characterStats.AirMultiplier);
-        }
         else
         {
             Debug.Log("Error finding enemy's element!");

@@ -10,6 +10,7 @@ public class Teleport : MonoBehaviour
     public GameObject player;
     public float TimeBeforeNextScene;
     public bool PlayerIsAtTheTp;
+    public Animator animator;
 
     void Start()
     {
@@ -19,7 +20,9 @@ public class Teleport : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(PlayerIsAtTheTp){
+        if(PlayerIsAtTheTp)
+        {
+            animator.SetBool("IsTeleporting", true);
             StartCoroutine(SceneSwitcher());
         }    
     }
@@ -27,13 +30,16 @@ public class Teleport : MonoBehaviour
     public IEnumerator SceneSwitcher()
     {
         yield return new WaitForSeconds(TimeBeforeNextScene);
-        if(PlayerIsAtTheTp){
+        if(PlayerIsAtTheTp)
+        {
             player.SetActive(false);
             yield return new WaitForSeconds(TimeBeforeNextScene);
-            if(SceneManager.GetSceneByName(scene1).isLoaded){
+            if(SceneManager.GetSceneByName(scene1).isLoaded)
+            {
                 SceneManager.LoadScene(scene2);
             }
-            if(SceneManager.GetSceneByName(scene2).isLoaded){
+            if(SceneManager.GetSceneByName(scene2).isLoaded)
+            {
                 SceneManager.LoadScene(scene1);
             }
         }
@@ -48,5 +54,6 @@ public class Teleport : MonoBehaviour
     public void OnTriggerExit2D(Collider2D collision)
     {
         PlayerIsAtTheTp = false;
+        animator.SetBool("IsTeleporting", false);
     }
 }
