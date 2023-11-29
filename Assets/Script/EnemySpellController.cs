@@ -8,7 +8,6 @@ public class EnemySpellController : MonoBehaviour
     private Animator animator;
     public GameObject attack; // Reference to the Box Collider
     private BoxCollider2D boxCollider;
-
     private AudioSource audioSource;
     private float distance;
     private bool isAttacking = false;
@@ -44,11 +43,13 @@ public class EnemySpellController : MonoBehaviour
         {
             // Reset animation state
             animator.ResetTrigger("Attack");
+            audioSource.enabled = false;
             boxCollider.enabled = false; // Disable collider when animation is done
         }
         else if (stateInfo.IsName("Attack") && stateInfo.normalizedTime <= 1.0f)
         {
             boxCollider.enabled = true; // Enable the collider for the attack
+            audioSource.enabled = true;
         }
         else
         {
@@ -60,6 +61,7 @@ public class EnemySpellController : MonoBehaviour
             else
             {
                 boxCollider.enabled = false; // Disable collider when animation is done
+                audioSource.enabled = false;
             }
         }
 
