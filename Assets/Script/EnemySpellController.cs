@@ -9,6 +9,8 @@ public class EnemySpellController : MonoBehaviour
     public GameObject attack; // Reference to the Box Collider
     private BoxCollider2D boxCollider;
 
+    private AudioSource audioSource;
+    private float distance;
     private bool isAttacking = false;
     private float attackCooldown = 2.0f; // Cooldown in seconds
     private float timeSinceLastAttack = 0.0f; // Timer to track cooldown
@@ -20,6 +22,7 @@ public class EnemySpellController : MonoBehaviour
         boxCollider.isTrigger = true; // Set the collider to be a trigger
         boxCollider.enabled = false; // Initially disable the collider
 
+        audioSource = attack.GetComponent<AudioSource>();
         player = GameObject.FindWithTag("Player").transform; // Find the player
     }
 
