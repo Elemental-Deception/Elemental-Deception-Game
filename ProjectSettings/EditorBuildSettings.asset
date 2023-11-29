@@ -12,24 +12,27 @@ EditorBuildSettings:
     path: Assets/Scene/Home.unity
     guid: 368ab7d700c33ed4ab72391cf2c52b62
   - enabled: 1
-    path: Assets/Scene/HomeVillage.unity
+    path: Assets/Scene/Home Village.unity
     guid: 86e89bd9e4a9c5245a015cf17e3c0aae
   - enabled: 1
     path: Assets/Scene/GameOver.unity
     guid: 11de0ee7918c4364b9e0d8a8b80f5ae0
   - enabled: 1
-    path: Assets/Scene/DirtVillage.unity
+    path: Assets/Scene/Dirt Village.unity
     guid: b56d0960e5d973746802dc6541f7c897
   - enabled: 1
-    path: Assets/Scene/FinalVillage.unity
-    guid: afa996a13b5c5d64fa0b197dbacc01f7
+    path: Assets/Scene/Final Village.unity
+    guid: 6c77a40d898540f47ad8351cdfd85a5f
   - enabled: 1
-    path: Assets/Scene/FireVillage.unity
+    path: Assets/Scene/Fire Village.unity
     guid: cf614b091055bca44b64547059f2420c
   - enabled: 1
-    path: Assets/Scene/SandVillage.unity
+    path: Assets/Scene/Sand Village.unity
     guid: 432ae765dcb7b5e438a4a64ea77e58d0
   - enabled: 1
-    path: Assets/Scene/SnowVillage.unity
+    path: Assets/Scene/Snow Village.unity
     guid: 2a13264c71357c243a4e743334c55e1c
+  - enabled: 0
+    path: Assets/Scene/Final Village.unity
+    guid: 6c77a40d898540f47ad8351cdfd85a5f
   m_configObjects: {}
