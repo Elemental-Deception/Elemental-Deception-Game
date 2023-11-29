@@ -5277,7 +5277,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &317299917
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13025,11 +13025,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4858421369284402, guid: 23d8863d708ffe14d8c50765b2ce41a6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.328
+      value: 3.11
       objectReference: {fileID: 0}
     - target: {fileID: 4858421369284402, guid: 23d8863d708ffe14d8c50765b2ce41a6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.684
+      value: 2.55
       objectReference: {fileID: 0}
     - target: {fileID: 4858421369284402, guid: 23d8863d708ffe14d8c50765b2ce41a6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -25623,7 +25623,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000061035156, y: 0}
+  m_AnchoredPosition: {x: 0.00012207031, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1616594417
@@ -31702,6 +31702,11 @@ PrefabInstance:
       propertyPath: XPText
       value: 
       objectReference: {fileID: 1123862012}
+    - target: {fileID: 535437208046179283, guid: 5e2d7cc0b7f7891409c417654f44dbd5,
+        type: 3}
+      propertyPath: Element
+      value: Fire
+      objectReference: {fileID: 0}
     - target: {fileID: 535437208046179283, guid: 5e2d7cc0b7f7891409c417654f44dbd5,
         type: 3}
       propertyPath: ManaBar
