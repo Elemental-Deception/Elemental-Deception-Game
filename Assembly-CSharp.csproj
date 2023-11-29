@@ -70,6 +70,7 @@
     <Compile Include="Assets\Script\EnemySpawnLogic.cs" />
     <Compile Include="Assets\Script\PauseMenuController.cs" />
     <Compile Include="Assets\ElementalMeters\Scripts\MeterScript.cs" />
+    <Compile Include="Assets\Script\EnemyBossSpellController.cs" />
     <Compile Include="Assets\Script\PlayerSpell.cs" />
     <Compile Include="Assets\charac.cs" />
     <Compile Include="Assets\Dynamic Floating Text\Demo\Scripts\Movement.cs" />
@@ -87,6 +88,7 @@
     <Compile Include="Assets\Dynamic Floating Text\Scripts\AlternationMode.cs" />
     <Compile Include="Assets\Script\MenuController.cs" />
     <Compile Include="Assets\Script\PlayerCharacter.cs" />
+    <Compile Include="Assets\Script\Teleport.cs" />
     <Compile Include="Assets\Script\PropsAltar.cs" />
     <Compile Include="Assets\Dynamic Floating Text\Scripts\DynamicText.cs" />
     <Compile Include="Assets\Dynamic Floating Text\Scripts\ExitType.cs" />
