@@ -11,7 +11,7 @@ public class EnemySpellController : MonoBehaviour
     private Animator animator;
     public GameObject attack; // Reference to the Box Collider
     private BoxCollider2D boxCollider;
-
+    private AudioSource audioSource;
     private float distance;
     private bool isAttacking = false;
 
@@ -19,6 +19,7 @@ public class EnemySpellController : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         boxCollider = attack.GetComponent<BoxCollider2D>(); // Get the Box Collider component
+        audioSource = attack.GetComponent<AudioSource>();
         player = GameObject.FindWithTag("Player").transform;
     }
 
@@ -37,12 +38,14 @@ public class EnemySpellController : MonoBehaviour
             // Animation is playing
             isAttacking = true;
             boxCollider.enabled = true;
+            audioSource.enabled = true;
         }
         else if (isAttacking && stateInfo.normalizedTime >= 1.0f)
         {
             // Animation has finished
             isAttacking = false;
             boxCollider.enabled = false;
+            audioSource.enabled = false;
         }
     }
 
