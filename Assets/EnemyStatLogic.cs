@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class EnemyStatLogic : MonoBehaviour
 {
@@ -34,6 +35,28 @@ public class EnemyStatLogic : MonoBehaviour
 
     public void TakeDmg(int damage)
     {
+        float temp;
+        if(enemy.name == "FireElemental")
+        {
+            damage = (int)Math.Round(damage * playerLogic.characterStats.FireMultiplier);
+        }
+        else if(enemy.name == "WaterElemental")
+        {
+            damage = (int)Math.Round(damage * playerLogic.characterStats.WaterMultiplier);
+        }
+        else if(enemy.name == "EarthElemental")
+        {
+            damage = (int)Math.Round(damage * playerLogic.characterStats.EarthMultiplier);
+        }
+        else if(enemy.name == "AirElemental")
+        {
+            damage = (int)Math.Round(damage * playerLogic.characterStats.AirMultiplier);
+        }
+        else
+        {
+            Debug.Log("Error finding enemy's element!");
+        }
+        
         enemyStats.Health -= damage;
         damageVector = new Vector3(enemy.transform.position.x, enemy.transform.position.y + (float)0.5, enemy.transform.position.z);
         DynamicTextManager.CreateText2D(damageVector, damage.ToString(), DynamicTextManager.defaultData);

@@ -7,8 +7,8 @@ public class EnemyFollowPlayer : MonoBehaviour
     public float followDistance = 5.0f;
     public float attackRange = 0.8f;
 
+    private Rigidbody2D rbParent;
     private Animator animator;
-    private Rigidbody2D rb;
 
     private const string isWalkingParam = "IsMoving";
     private const string attackParam = "Attack";
@@ -16,7 +16,7 @@ public class EnemyFollowPlayer : MonoBehaviour
     private void Start()
     {
         animator = GetComponentInParent<Animator>();
-        rb = GetComponentInParent<Rigidbody2D>();
+        rbParent = GetComponentInParent<Rigidbody2D>();
         player = GameObject.FindWithTag("Player").transform;
     }
 
@@ -24,42 +24,47 @@ public class EnemyFollowPlayer : MonoBehaviour
     {
         float distanceToPlayer = Vector2.Distance(transform.position, player.position);
 
-        // Movement logic
         if (distanceToPlayer <= followDistance && distanceToPlayer > attackRange)
         {
-            Vector2 direction = (player.position - transform.position).normalized;
-            rb.velocity = direction * speed;
-
-            // Rotate the parent enemy based on the velocity direction
-            RotateParentBasedOnVelocity(rb.velocity.x);
-
-            animator.SetBool(isWalkingParam, true);
+            MoveTowardsPlayer();
         }
         else
         {
-            rb.velocity = Vector2.zero;
-            animator.SetBool(isWalkingParam, false);
+            StopMoving();
         }
 
-        // Attack logic
-        if (distanceToPlayer <= attackRange)
+        if (rbParent.velocity.magnitude < 0.01f)
         {
-            animator.SetTrigger(attackParam);
-        }
-        else
-        {
-            animator.ResetTrigger(attackParam);
+            rbParent.velocity = new Vector2(0.001f, 0);
         }
     }
 
-    private void RotateParentBasedOnVelocity(float velocityX)
+    private void MoveTowardsPlayer()
     {
-        Transform parentTransform = transform.parent;
+        Vector2 direction = (player.position - transform.position).normalized;
+        rbParent.velocity = direction * speed;
 
-        if ((velocityX < 0 && parentTransform.eulerAngles.y != 180) ||
-            (velocityX > 0 && parentTransform.eulerAngles.y != 0))
+        animator.SetBool(isWalkingParam, true);
+
+        // Flip the parent enemy to face the player
+        FlipParentBasedOnDirection(direction.x);
+    }
+
+    private void StopMoving()
+    {
+        rbParent.velocity = Vector2.zero;
+        animator.SetBool(isWalkingParam, false);
+    }
+
+    private void FlipParentBasedOnDirection(float directionX)
+    {
+        if ((directionX > 0 && rbParent.transform.localScale.x < 0) ||
+            (directionX < 0 && rbParent.transform.localScale.x > 0))
         {
-            parentTransform.eulerAngles = new Vector3(0, velocityX < 0 ? 180 : 0, 0);
+            // Flip the parent by changing its scale
+            Vector3 scale = rbParent.transform.localScale;
+            scale.x *= -1;
+            rbParent.transform.localScale = scale;
         }
     }
 }

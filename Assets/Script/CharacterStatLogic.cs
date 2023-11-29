@@ -21,10 +21,15 @@ public class CharacterStatLogic : MonoBehaviour
     public TMP_Text ManaShadowText;
     public TMP_Text XPText;
     public TMP_Text XPShadowText;
+    public string Element;
     public double ManaFactor;
     public class CharacterStats
     {
         public float DamageMultiplier { get; set; } = 1;
+        public float FireMultiplier { get; set; } = 1;
+        public float WaterMultiplier { get; set; } = 1;
+        public float EarthMultiplier { get; set; } = 1;
+        public float AirMultiplier { get; set; } = 1;
         public float Health { get; set; } = 100;
         public float MaxHealth { get; set; } = 100;
         public float Mana { get; set; } = 100;
@@ -48,6 +53,7 @@ public class CharacterStatLogic : MonoBehaviour
     {
         player = GameObject.FindWithTag("Player");
         animator = GetComponent<Animator>();
+        ChooseElement(Element);
     }
 
     private void FixedUpdate()
@@ -203,5 +209,41 @@ public class CharacterStatLogic : MonoBehaviour
         ManaBar.fillAmount = 1f;
         ManaText.SetText((int)(Math.Round(characterStats.Mana)) + "/" + (int)(Math.Round(characterStats.MaxMana)));
         ManaShadowText.SetText((int)(Math.Round(characterStats.Mana)) + "/" + (int)(Math.Round(characterStats.MaxMana)));
+    }
+
+    public void ChooseElement(string Element)
+    {
+        if(Element == "Fire")
+        {
+            characterStats.FireMultiplier = (float)1;
+            characterStats.WaterMultiplier = (float)0.75;
+            characterStats.EarthMultiplier = (float)1;
+            characterStats.AirMultiplier = (float)1.5;
+        }
+        else if(Element == "Water")
+        {
+            characterStats.FireMultiplier = (float)1.25;
+            characterStats.WaterMultiplier = (float)1;
+            characterStats.EarthMultiplier = (float)0.75;
+            characterStats.AirMultiplier = (float)1;
+        }
+        else if(Element == "Earth")
+        {
+            characterStats.FireMultiplier = (float)1;
+            characterStats.WaterMultiplier = (float)1.25;
+            characterStats.EarthMultiplier = (float)1;
+            characterStats.AirMultiplier = (float)0.75;
+        }
+        else if(Element == "Air")
+        {
+            characterStats.FireMultiplier = (float)0.75;
+            characterStats.WaterMultiplier = (float)1;
+            characterStats.EarthMultiplier = (float)1.25;
+            characterStats.AirMultiplier = (float)1;
+        }
+        else
+        {
+            Debug.Log("Not An Element!");
+        }
     }
 }
