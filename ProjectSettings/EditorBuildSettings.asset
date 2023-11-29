@@ -51,7 +51,7 @@ EditorBuildSettings:
     path: Assets/Scene/AniFire.unity
     guid: 44886218983c89f4692df4c3c0f0eb51
   - enabled: 1
-    path: Assets/Scene/AniFInal.unity
+    path: Assets/Scene/AniFinal.unity
     guid: ba4c885b7bdffef46a33d2a6c72ad7ca
   - enabled: 1
     path: Assets/Scene/AniAir.unity
