@@ -216,29 +216,29 @@ public class CharacterStatLogic : MonoBehaviour
         if(Element == "Fire")
         {
             characterStats.FireMultiplier = (float)1;
-            characterStats.WaterMultiplier = (float)0.5;
+            characterStats.WaterMultiplier = (float)0.75;
             characterStats.EarthMultiplier = (float)1;
             characterStats.AirMultiplier = (float)1.5;
         }
         else if(Element == "Water")
         {
-            characterStats.FireMultiplier = (float)1.5;
+            characterStats.FireMultiplier = (float)1.25;
             characterStats.WaterMultiplier = (float)1;
-            characterStats.EarthMultiplier = (float)0.5;
+            characterStats.EarthMultiplier = (float)0.75;
             characterStats.AirMultiplier = (float)1;
         }
         else if(Element == "Earth")
         {
             characterStats.FireMultiplier = (float)1;
-            characterStats.WaterMultiplier = (float)1.5;
+            characterStats.WaterMultiplier = (float)1.25;
             characterStats.EarthMultiplier = (float)1;
-            characterStats.AirMultiplier = (float)0.5;
+            characterStats.AirMultiplier = (float)0.75;
         }
         else if(Element == "Air")
         {
-            characterStats.FireMultiplier = (float)0.5;
+            characterStats.FireMultiplier = (float)0.75;
             characterStats.WaterMultiplier = (float)1;
-            characterStats.EarthMultiplier = (float)1.5;
+            characterStats.EarthMultiplier = (float)1.25;
             characterStats.AirMultiplier = (float)1;
         }
         else
