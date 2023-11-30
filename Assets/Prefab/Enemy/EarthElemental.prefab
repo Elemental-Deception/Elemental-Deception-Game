@@ -377,7 +377,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f39f2364e87975d46942f116bccd1f9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Enemy: {fileID: 6813806745071676198}
+  attackRange: 3
   attack: {fileID: 6699874023666169404}
 --- !u!50 &9074657099505737807
 Rigidbody2D:
@@ -463,7 +463,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: e21eda9966181454da65499a6e90c6ba, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.208
+  m_Volume: 0.39
   m_Pitch: 1
   Loop: 1
   Mute: 0
