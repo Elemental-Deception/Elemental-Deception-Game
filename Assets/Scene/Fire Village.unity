@@ -2372,7 +2372,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scene1: Fire Village
   scene2: AniSand
-  player: {fileID: 0}
+  player: {fileID: 1920998491}
   TimeBeforeNextScene: 2
   PlayerIsAtTheTp: 0
 --- !u!1001 &742694830
@@ -3015,7 +3015,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scene1: Fire Village
   scene2: AniFinal
-  player: {fileID: 0}
+  player: {fileID: 1920998491}
   TimeBeforeNextScene: 2
   PlayerIsAtTheTp: 0
 --- !u!1001 &849801309
@@ -12411,7 +12411,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scene1: Fire Village
   scene2: AniSnow
-  player: {fileID: 0}
+  player: {fileID: 1920998491}
   TimeBeforeNextScene: 2
   PlayerIsAtTheTp: 0
 --- !u!1 &1186368576

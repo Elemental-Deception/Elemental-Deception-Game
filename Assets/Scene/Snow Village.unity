@@ -1656,7 +1656,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scene1: Snow Village
   scene2: AniFinal
-  player: {fileID: 0}
+  player: {fileID: 1698834981}
   TimeBeforeNextScene: 2
   PlayerIsAtTheTp: 0
 --- !u!1001 &785301987
@@ -12615,7 +12615,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scene1: Snow Village
   scene2: AniFire
-  player: {fileID: 0}
+  player: {fileID: 1698834981}
   TimeBeforeNextScene: 2
   PlayerIsAtTheTp: 0
 --- !u!1001 &1605198661

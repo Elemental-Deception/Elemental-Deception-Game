@@ -419,7 +419,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scene1: Tutorial Village
   scene2: AniSand
-  player: {fileID: 0}
+  player: {fileID: 766252922}
   TimeBeforeNextScene: 2
   PlayerIsAtTheTp: 0
 --- !u!114 &131409059 stripped
@@ -7525,7 +7525,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scene1: Tutorial Village
   scene2: AniSnow
-  player: {fileID: 0}
+  player: {fileID: 766252922}
   TimeBeforeNextScene: 2
   PlayerIsAtTheTp: 0
 --- !u!1001 &1203141817
@@ -16470,7 +16470,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scene1: Tutorial Village
   scene2: AniFinal
-  player: {fileID: 0}
+  player: {fileID: 766252922}
   TimeBeforeNextScene: 2
   PlayerIsAtTheTp: 0
 --- !u!1001 &2039090611
