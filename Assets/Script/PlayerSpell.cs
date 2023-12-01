@@ -24,7 +24,7 @@ public class PlayerSpell : MonoBehaviour
         EnemyStatLogic enemy = collidedObject.GetComponent<EnemyStatLogic>();
         if (enemy != null)
         {
-            enemy.TakeDmg((int)Math.Round(15 * playerLogic.characterStats.DamageMultiplier));
+            enemy.TakeDmg((int)Math.Round(15 * playerLogic.damageSystem.DamageMultiplier));
             Debug.Log("Dmg : " + enemy.GetHealth());
         }
     }

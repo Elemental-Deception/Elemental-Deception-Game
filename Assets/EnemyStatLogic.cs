@@ -38,15 +38,15 @@ public class EnemyStatLogic : MonoBehaviour
         float temp;
         if(enemy.name == "FireElemental")
         {
-            damage = (int)Math.Round(damage * playerLogic.characterStats.FireMultiplier);
+            damage = (int)Math.Round(damage * playerLogic.damageSystem.FireMultiplier);
         }
         else if(enemy.name == "WaterElemental")
         {
-            damage = (int)Math.Round(damage * playerLogic.characterStats.WaterMultiplier);
+            damage = (int)Math.Round(damage * playerLogic.damageSystem.WaterMultiplier);
         }
         else if(enemy.name == "EarthElemental")
         {
-            damage = (int)Math.Round(damage * playerLogic.characterStats.EarthMultiplier);
+            damage = (int)Math.Round(damage * playerLogic.damageSystem.EarthMultiplier);
         }
         else
         {

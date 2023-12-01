@@ -23,24 +23,15 @@ public class CharacterStatLogic : MonoBehaviour
     public TMP_Text XPShadowText;
     public string Element;
     public double ManaFactor;
-    public bool IsTeleporting = false;
-    public class CharacterStats
+    public class DamageSystem
     {
         public float DamageMultiplier { get; set; } = 1;
         public float FireMultiplier { get; set; } = 1;
         public float WaterMultiplier { get; set; } = 1;
         public float EarthMultiplier { get; set; } = 1;
-        public float Health { get; set; } = 100;
-        public float MaxHealth { get; set; } = 100;
-        public float Mana { get; set; } = 100;
-        public float MaxMana { get; set; } = 100;
-        public float ManaRegenSpeed { get; set; } = 1;
-        public float XP { get; set; } = 0;
-        public float MaxXP { get; set; } = 100;
-        public float Level { get; set; } = 1;
     }
 
-    public CharacterStats characterStats = new CharacterStats();
+    public DamageSystem damageSystem = new DamageSystem();
     private GameObject player;
     private GameObject teleporter;
     private Teleport teleporterScript;
@@ -52,45 +43,51 @@ public class CharacterStatLogic : MonoBehaviour
     private float overflow;
     private int KillCount = 0;
 
+    private StatsSystem statsSystem;
+
     public void Start()
     {
+        statsSystem = new StatsSystem();
         player = GameObject.FindWithTag("Player");
         animator = GetComponent<Animator>();
         teleporter = GameObject.Find("PF Props Altar");
         teleporterScript = teleporter.GetComponent<Teleport>();
         ChooseElement(Element);
     }
-
+    private void Update(){
+        HealthBar.fillAmount = statsSystem.HealthPercent();
+        HealthText.SetText((int)(statsSystem.getHealth()) + "/" + (int)(statsSystem.getMaxHealth()));
+        HealthShadowText.SetText((int)(statsSystem.getHealth()) + "/" + (int)(statsSystem.getMaxHealth()));
+        ManaBar.fillAmount = statsSystem.ManaPercent();
+        ManaText.SetText((int)(statsSystem.getMana()) + "/" + (int)(statsSystem.getMaxMana()));
+        ManaShadowText.SetText((int)(statsSystem.getMana()) + "/" + (int)(statsSystem.getMaxMana()));
+        XPBar.fillAmount = statsSystem.XPPercent();
+        XPText.SetText((int)(statsSystem.getXP()) + "/" + (int)(statsSystem.getMaxXP()));
+        XPShadowText.SetText((int)(statsSystem.getXP()) + "/" + (int)(statsSystem.getMaxXP()));
+    }
     private void FixedUpdate()
     {
-        double ManaDelta = ManaFactor * characterStats.ManaRegenSpeed * Time.deltaTime;
-        ManaText.SetText((int)(Math.Round(characterStats.Mana)) + "/" + (int)(Math.Round(characterStats.MaxMana)));
-        ManaShadowText.SetText((int)(Math.Round(characterStats.Mana)) + "/" + (int)(Math.Round(characterStats.MaxMana)));
+        double ManaDelta = ManaFactor * statsSystem.getManaRegen() * Time.deltaTime;
+        ManaText.SetText((int)(statsSystem.getMana()) + "/" + (int)(statsSystem.getMaxMana()));
+        ManaShadowText.SetText((int)(statsSystem.getMana()) + "/" + (int)(statsSystem.getMaxMana()));
         GainMana(ManaDelta);
     }
 
     public void TakeDmg(int damage)
     {
-        characterStats.Health -= damage;
+        statsSystem.subHealth(damage);
         damageVector = new Vector3(player.transform.position.x, player.transform.position.y + (float)0.5, player.transform.position.z);
         DynamicTextManager.CreateText2D(damageVector, damage.ToString(), DynamicTextManager.defaultData);
         animator.SetTrigger("Hurt");
-        if (characterStats.Health <= 0 && !isDead)
+        HealthBar.fillAmount = statsSystem.HealthPercent();
+        HealthText.SetText((int)(statsSystem.getHealth()) + "/" + (int)(statsSystem.getMaxHealth()));
+        HealthShadowText.SetText((int)(statsSystem.getHealth()) + "/" + (int)(statsSystem.getMaxHealth()));
+        if (statsSystem.getHealth() <= 0 && !isDead)
         {
-            characterStats.Health = 0;
-            HealthBar.fillAmount = 0f;
-            HealthText.SetText(0 + "/" + (int)(Math.Round(characterStats.MaxHealth)));
-            HealthShadowText.SetText(0 + "/" + (int)(Math.Round(characterStats.MaxHealth)));
             animator.SetTrigger("Dead");  // Assuming you have a trigger named "Die" to play death animation
             animator.SetBool("IsAlive", false);
             isDead = true; // Mark character as dead
             StartCoroutine(WaitToLoadScene());
-        }
-        else
-        {
-            HealthBar.fillAmount = characterStats.Health / characterStats.MaxHealth;
-            HealthText.SetText((int)(Math.Round(characterStats.Health)) + "/" + (int)(Math.Round(characterStats.MaxHealth)));
-            HealthShadowText.SetText((int)(Math.Round(characterStats.Health)) + "/" + (int)(Math.Round(characterStats.MaxHealth)));
         }
     }
 
@@ -98,16 +95,18 @@ public class CharacterStatLogic : MonoBehaviour
     {
         yield return new WaitForSeconds(sceneChangeTime);
         SceneManager.LoadScene(sceneName);
+        statsSystem.resetStats();
     }
 
     public bool SpendMana(int manaCost)
     {
-        if (characterStats.Mana - manaCost >= 0 && !isDead)
+        if (statsSystem.getMana() - manaCost >= 0 && !isDead)
         {
-            characterStats.Mana -= manaCost;
-            ManaBar.fillAmount = characterStats.Mana / characterStats.MaxMana;
-            ManaText.SetText((int)(Math.Round(characterStats.Mana)) + "/" + (int)(Math.Round(characterStats.MaxMana)));
-            ManaShadowText.SetText((int)(Math.Round(characterStats.Mana)) + "/" + (int)(Math.Round(characterStats.MaxMana)));
+            statsSystem.subMana(manaCost);
+
+            ManaBar.fillAmount = statsSystem.ManaPercent();
+            ManaText.SetText((int)(statsSystem.getMana()) + "/" + (int)(statsSystem.getMana()));
+            ManaShadowText.SetText((int)(statsSystem.getMana()) + "/" + (int)(statsSystem.getMana()));
             return true;
         }
         else
@@ -119,130 +118,96 @@ public class CharacterStatLogic : MonoBehaviour
 
     public float GetHealth()
     {
-        return characterStats.Health;
+        return statsSystem.getHealth();
     }
 
     public float GetMana(double ManaDelta)
     {
-        return characterStats.Mana;
+        return statsSystem.getMana();
     }
 
     public float GetXP(float XPDelta)
     {
-        return characterStats.XP;
+        return statsSystem.getXP();
     }
 
     public void GainHealth(float HealthDelta)
     {
-        if(!isDead && (HealthBar.fillAmount < 1f))
+        if(!isDead)
         {
-            if(((characterStats.Health + (float)HealthDelta) / characterStats.MaxHealth) <= 1f)
-            {
-                characterStats.Health += (float)HealthDelta;
-            }
-            else
-            {
-                characterStats.Health += (characterStats.MaxHealth - characterStats.Health);
-            }
-            HealthBar.fillAmount = characterStats.Health / characterStats.MaxHealth;
-            HealthText.SetText((int)(Math.Round(characterStats.Health)) + "/" + (int)(Math.Round(characterStats.MaxHealth)));
-            HealthShadowText.SetText((int)(Math.Round(characterStats.Health)) + "/" + (int)(Math.Round(characterStats.MaxHealth)));
+            statsSystem.addHealth((int)HealthDelta);
+            HealthBar.fillAmount = statsSystem.HealthPercent();
+            HealthText.SetText((int)(statsSystem.getHealth()) + "/" + (int)(statsSystem.getMaxHealth()));
+            HealthShadowText.SetText((int)(statsSystem.getHealth()) + "/" + (int)(statsSystem.getMaxHealth()));
         }
     }
 
     public void GainMana(double ManaDelta)
     {
-        if(!isDead && (ManaBar.fillAmount < 1f))
+        if(!isDead)
         {
-            if(((characterStats.Mana + (float)ManaDelta) / characterStats.MaxMana) <= 1f)
-            {
-                characterStats.Mana += (float)ManaDelta;
-            }
-            else
-            {
-                characterStats.Mana += (characterStats.MaxMana - characterStats.Mana);
-            }
-            ManaBar.fillAmount = characterStats.Mana / characterStats.MaxMana;
+            statsSystem.addMana((int)ManaDelta);
+            ManaBar.fillAmount = statsSystem.ManaPercent();
+            ManaText.SetText((int)(statsSystem.getMana()) + "/" + (int)(statsSystem.getMaxMana()));
+            ManaShadowText.SetText((int)(statsSystem.getMana()) + "/" + (int)(statsSystem.getMaxMana()));
         }
     }
 
     public void GainXP(float XPDelta)
     {
-        overflow = 0;
-        if(!isDead && (XPBar.fillAmount < 1f))
+        int Level = statsSystem.getLevel();
+        if(!isDead)
         {
-            if(((characterStats.XP + (float)XPDelta) / characterStats.MaxXP) < 1f)
-            {
-                characterStats.XP += (float)XPDelta;
-            }
-            else
-            {
-                overflow = (XPDelta - (characterStats.MaxXP - characterStats.XP));
-                LevelUp();
-            }
-            XPBar.fillAmount = characterStats.XP / characterStats.MaxXP;
-            XPText.SetText((int)(Math.Round(characterStats.XP)) + "/" + (int)(Math.Round(characterStats.MaxXP)));
-            XPShadowText.SetText((int)(Math.Round(characterStats.XP)) + "/" + (int)(Math.Round(characterStats.MaxXP)));
-            if(overflow != 0)
-            {
-                GainXP(overflow);
-            }
-            else
-            {
-                KillCount++;
-                teleporterScript.CheckIfMeetsCondition(KillCount);
-            }
+            statsSystem.addXP((int)XPDelta);
+            KillCount++;
+            teleporterScript.CheckIfMeetsCondition(KillCount);
+            XPBar.fillAmount = statsSystem.XPPercent();
+            XPText.SetText((int)(statsSystem.getXP()) + "/" + (int)(statsSystem.getMaxXP()));
+            XPShadowText.SetText((int)(statsSystem.getXP()) + "/" + (int)(statsSystem.getMaxXP()));
+        }
+        if(Level != statsSystem.getLevel())
+        {
+            LevelUp();
         }
     }
 
     public void LevelUp()
     {
-        characterStats.XP = 0;
-        XPBar.fillAmount = 0f;
-        XPText.SetText((int)(Math.Round(characterStats.XP)) + "/" + (int)(Math.Round(characterStats.MaxXP)));
-        XPShadowText.SetText((int)(Math.Round(characterStats.XP)) + "/" + (int)(Math.Round(characterStats.MaxXP)));
         XPVector = new Vector3(player.transform.position.x, player.transform.position.y + (float)0.5, player.transform.position.z);
         DynamicTextManager.CreateText2D(XPVector, "Level Up", XPTextData);
-        characterStats.Level++;
-        LevelText.SetText("Level: <color=#32CD32>" + (int)(Math.Round(characterStats.Level)) + "</color>");
-        LevelShadowText.SetText("Level: " + (int)(Math.Round(characterStats.Level)));
-        characterStats.DamageMultiplier = (float)1.2 * characterStats.DamageMultiplier;
-        characterStats.MaxXP = (float)1.2 * characterStats.MaxXP;
-        characterStats.MaxHealth = (float)1.2 * characterStats.MaxHealth;
-        characterStats.MaxMana = (float)1.2 * characterStats.MaxMana;
-        characterStats.ManaRegenSpeed = (float)1.2 * characterStats.ManaRegenSpeed;
-        characterStats.Health = characterStats.MaxHealth;
-        characterStats.Mana = characterStats.MaxMana;
-        HealthBar.fillAmount = 1f;
-        HealthText.SetText((int)(Math.Round(characterStats.Health)) + "/" + (int)(Math.Round(characterStats.MaxHealth)));
-        HealthShadowText.SetText((int)(Math.Round(characterStats.Health)) + "/" + (int)(Math.Round(characterStats.MaxHealth)));
-        ManaBar.fillAmount = 1f;
-        ManaText.SetText((int)(Math.Round(characterStats.Mana)) + "/" + (int)(Math.Round(characterStats.MaxMana)));
-        ManaShadowText.SetText((int)(Math.Round(characterStats.Mana)) + "/" + (int)(Math.Round(characterStats.MaxMana)));
-    }
+        LevelText.SetText("Level: <color=#32CD32>" + (int)(statsSystem.getLevel()) + "</color>");
+        LevelShadowText.SetText("Level: " + (int)(statsSystem.getLevel()));
 
-    public void ChooseElement(string Element)
-    {
-        if(Element == "Fire")
-        {
-            characterStats.FireMultiplier = (float)1;
-            characterStats.WaterMultiplier = (float)0.75;
-            characterStats.EarthMultiplier = (float)1.25;
-        }
-        else if(Element == "Water")
-        {
-            characterStats.FireMultiplier = (float)1.25;
-            characterStats.WaterMultiplier = (float)1;
-            characterStats.EarthMultiplier = (float)0.75;
-        }
-        else if(Element == "Earth")
-        {
-            characterStats.FireMultiplier = (float)0.75;
-            characterStats.WaterMultiplier = (float)1.25;
-            characterStats.EarthMultiplier = (float)1;
-        }
-        else
-        {
+        damageSystem.DamageMultiplier = (float)1.2 * damageSystem.DamageMultiplier;
+
+        statsSystem.setMaxHealth((int)((float)1.2 * statsSystem.getMaxHealth()));
+        statsSystem.setMaxMana((int)((float)1.2 * statsSystem.getMaxMana()));
+        statsSystem.setMaxXP((int)((float)1.2 * statsSystem.getMaxXP()));
+        statsSystem.setManaRegen((int)((float)1.2 * statsSystem.getManaRegen()));
+        statsSystem.setHealth(statsSystem.getMaxHealth());
+        statsSystem.setMana(statsSystem.getMaxMana());
+
+        HealthBar.fillAmount = statsSystem.HealthPercent();
+        HealthText.SetText(((int)(statsSystem.getHealth())) + "/" + ((int)(statsSystem.getMaxHealth())));
+        HealthShadowText.SetText(((int)(statsSystem.getHealth())) + "/" + ((int)(statsSystem.getMaxHealth())));
+        ManaBar.fillAmount = statsSystem.ManaPercent();
+        ManaText.SetText(((int)(statsSystem.getMana())) + "/" + ((int)(statsSystem.getMaxMana())));
+        ManaShadowText.SetText(((int)(statsSystem.getMana())) + "/" + ((int)(statsSystem.getMaxMana())));
+    }
+    public void ChooseElement(string Element){
+        if(Element == "Fire"){
+            damageSystem.FireMultiplier = (float)1;
+            damageSystem.WaterMultiplier = (float)0.75;
+            damageSystem.EarthMultiplier = (float)1.25;
+        }else if(Element == "Water"){
+            damageSystem.FireMultiplier = (float)1.25;
+            damageSystem.WaterMultiplier = (float)1;
+            damageSystem.EarthMultiplier = (float)0.75;
+        }else if(Element == "Earth"){
+            damageSystem.FireMultiplier = (float)0.75;
+            damageSystem.WaterMultiplier = (float)1.25;
+            damageSystem.EarthMultiplier = (float)1;
+        }else{
             Debug.Log("Not An Element!");
         }
     }

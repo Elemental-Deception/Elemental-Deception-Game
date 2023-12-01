@@ -13117,7 +13117,6 @@ MonoBehaviour:
   player: {fileID: 976994598}
   TimeBeforeNextScene: 2
   PlayerIsAtTheTp: 0
-  animator: {fileID: 142556733}
 --- !u!4 &728819201 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7947911505737750448, guid: 91afc0649ae41a64c860a5d49f05ff40,
@@ -32290,6 +32289,11 @@ PrefabInstance:
       propertyPath: XPShadowText
       value: 
       objectReference: {fileID: 1405754231}
+    - target: {fileID: 535437208046179283, guid: 5e2d7cc0b7f7891409c417654f44dbd5,
+        type: 3}
+      propertyPath: IsTeleporting
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 535437208046179283, guid: 5e2d7cc0b7f7891409c417654f44dbd5,
         type: 3}
       propertyPath: ManaShadowText
