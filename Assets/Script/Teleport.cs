@@ -10,7 +10,6 @@ public class Teleport : MonoBehaviour
     public GameObject player;
     public float TimeBeforeNextScene;
     public bool PlayerIsAtTheTp;
-    public Animator animator;
 
     void Start()
     {
@@ -22,7 +21,6 @@ public class Teleport : MonoBehaviour
     {
         if(PlayerIsAtTheTp)
         {
-            animator.SetBool("IsTeleporting", true);
             StartCoroutine(SceneSwitcher());
         }    
     }
@@ -54,6 +52,5 @@ public class Teleport : MonoBehaviour
     public void OnTriggerExit2D(Collider2D collision)
     {
         PlayerIsAtTheTp = false;
-        animator.SetBool("IsTeleporting", false);
     }
 }
