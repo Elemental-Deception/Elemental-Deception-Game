@@ -13117,7 +13117,7 @@ MonoBehaviour:
   player: {fileID: 976994598}
   TimeBeforeNextScene: 2
   PlayerIsAtTheTp: 0
-  animator: {fileID: 0}
+  animator: {fileID: 142556733}
   HasCondition: 0
   MeetsCondition: 0
   IsToFinalVillage: 0
