@@ -50,9 +50,16 @@ public class CharacterStatLogic : MonoBehaviour
         ChooseElement(Element);
     }
     private void Update(){
-        FixedUpdate();
+        HealthBar.fillAmount = statsSystem.HealthPercent();
+        HealthText.SetText((int)(statsSystem.getHealth()) + "/" + (int)(statsSystem.getMaxHealth()));
+        HealthShadowText.SetText((int)(statsSystem.getHealth()) + "/" + (int)(statsSystem.getMaxHealth()));
+        ManaBar.fillAmount = statsSystem.ManaPercent();
+        ManaText.SetText((int)(statsSystem.getMana()) + "/" + (int)(statsSystem.getMaxMana()));
+        ManaShadowText.SetText((int)(statsSystem.getMana()) + "/" + (int)(statsSystem.getMaxMana()));
+        XPBar.fillAmount = statsSystem.XPPercent();
+        XPText.SetText((int)(statsSystem.getXP()) + "/" + (int)(statsSystem.getMaxXP()));
+        XPShadowText.SetText((int)(statsSystem.getXP()) + "/" + (int)(statsSystem.getMaxXP()));
     }
-
     private void FixedUpdate()
     {
         double ManaDelta = ManaFactor * statsSystem.getManaRegen() * Time.deltaTime;
@@ -76,6 +83,7 @@ public class CharacterStatLogic : MonoBehaviour
             animator.SetBool("IsAlive", false);
             isDead = true; // Mark character as dead
             StartCoroutine(WaitToLoadScene());
+            statsSystem.resetStats();
         }
     }
 

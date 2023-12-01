@@ -1,5 +1,7 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-public class StatsSystem
+public class StatsSystem : MonoBehaviour
 {
     private int Health;
     private int MaxHealth;
@@ -10,7 +12,7 @@ public class StatsSystem
     private int MaxXP;
     private int Level;
 
-    public StatsSystem(){
+    public void Start(){
         PlayerPrefs.SetInt("Health", 100);
         PlayerPrefs.SetInt("MaxHealth",100);
         PlayerPrefs.SetInt("Mana",100);
@@ -19,7 +21,28 @@ public class StatsSystem
         PlayerPrefs.SetInt("XP",0);
         PlayerPrefs.SetInt("MaxXP",100);
         PlayerPrefs.SetInt("Level",0);
+        
+        this.Health = PlayerPrefs.GetInt("Health");
+        this.MaxHealth = PlayerPrefs.GetInt("MaxHealth");
+        this.Mana = PlayerPrefs.GetInt("Mana");
+        this.ManaRegen = PlayerPrefs.GetInt("ManaRegen");
+        this.MaxMana = PlayerPrefs.GetInt("MaxMana");
+        this.XP = PlayerPrefs.GetInt("XP");
+        this.MaxXP = PlayerPrefs.GetInt("MaxXP");
+        this.Level = PlayerPrefs.GetInt("Level");
     }
+
+    public void Update(){
+        PlayerPrefs.SetInt("Health", this.Health);
+        PlayerPrefs.SetInt("MaxHealth",this.MaxHealth);
+        PlayerPrefs.SetInt("Mana",this.Mana);
+        PlayerPrefs.SetInt("ManaRegen",this.ManaRegen);
+        PlayerPrefs.SetInt("MaxMana",this.MaxMana);
+        PlayerPrefs.SetInt("XP",this.XP);
+        PlayerPrefs.SetInt("MaxXP",this.MaxXP);
+        PlayerPrefs.SetInt("Level",this.Level);
+    }
+
     //Getters
     public int getHealth(){
         return PlayerPrefs.GetInt("Health");
@@ -117,4 +140,17 @@ public class StatsSystem
         if(PlayerPrefs.GetInt("XP") == 0) return 0;
         return (float)PlayerPrefs.GetInt("XP") / PlayerPrefs.GetInt("MaxXP");
     }
+
+    public void resetStats(){
+        PlayerPrefs.SetInt("Health", PlayerPrefs.GetInt("MaxHealth"));
+        PlayerPrefs.SetInt("Mana", PlayerPrefs.GetInt("MaxMana"));
+        PlayerPrefs.SetInt("XP",0);
+        PlayerPrefs.SetInt("Level",0);
+        
+        this.Health = PlayerPrefs.GetInt("Health");
+        this.Mana = PlayerPrefs.GetInt("Mana");
+        this.XP = PlayerPrefs.GetInt("XP");
+        this.Level = PlayerPrefs.GetInt("Level");
+    }
+
 }
