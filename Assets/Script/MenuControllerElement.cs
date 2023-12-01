@@ -18,6 +18,7 @@ public class MainMenuElement : MonoBehaviour
     public void LoadScene(string element)
     {
         statsSystem.resetStats(100, 100, 100, 1, 100, 0, 100, 1, 0, 0, element);
+        Debug.Log(statsSystem.getPlayerElement());
         SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
     }
 }

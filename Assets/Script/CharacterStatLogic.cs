@@ -67,6 +67,7 @@ public class CharacterStatLogic : MonoBehaviour
     {
         double ManaDelta = ManaFactor * statsSystem.getManaRegen() * Time.deltaTime;
         GainMana(ManaDelta);
+        
     }
 
     public void TakeDmg(int damage)
@@ -183,7 +184,7 @@ public class CharacterStatLogic : MonoBehaviour
         statsSystem.setHealth(statsSystem.getMaxHealth());
         statsSystem.setMana(statsSystem.getMaxMana());
 
-        HealthBar.fillAmount = statsSystem.HealthPercent();
+        HealthBar.fillAmount = (int)statsSystem.HealthPercent();
         HealthText.SetText(((int)(statsSystem.getHealth())) + "/" + ((int)(statsSystem.getMaxHealth())));
         HealthShadowText.SetText(((int)(statsSystem.getHealth())) + "/" + ((int)(statsSystem.getMaxHealth())));
         ManaBar.fillAmount = statsSystem.ManaPercent();
