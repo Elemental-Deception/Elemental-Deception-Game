@@ -52,6 +52,7 @@ public class CharacterStatLogic : MonoBehaviour
         animator = GetComponent<Animator>();
         teleporter = GameObject.Find("PF Props Altar");
         teleporterScript = teleporter.GetComponent<Teleport>();
+        statsSystem.setPlayerElement(Element);
         ChooseElement(Element);
     }
     private void Update(){
@@ -95,7 +96,6 @@ public class CharacterStatLogic : MonoBehaviour
     {
         yield return new WaitForSeconds(sceneChangeTime);
         SceneManager.LoadScene(sceneName);
-        statsSystem.resetStats();
     }
 
     public bool SpendMana(int manaCost)
