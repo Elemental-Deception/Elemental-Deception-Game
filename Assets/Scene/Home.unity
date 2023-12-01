@@ -4201,6 +4201,7 @@ MonoBehaviour:
   OpenDoorImage: {fileID: 21300160, guid: 29c9cded5e558164aaf8c9bf08aa1510, type: 3}
   CloseDoorImage: {fileID: 21300158, guid: 29c9cded5e558164aaf8c9bf08aa1510, type: 3}
   TimeBeforeNextScene: 1
+  animator: {fileID: 471994198}
   PlayerIsAtTheDoor: 0
 --- !u!4 &1094246096 stripped
 Transform:

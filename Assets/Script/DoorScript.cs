@@ -11,6 +11,7 @@ public class DoorScript : MonoBehaviour
     public Sprite OpenDoorImage;
     public Sprite CloseDoorImage;
     public float TimeBeforeNextScene;
+    public Animator animator;
     public bool PlayerIsAtTheDoor;
     // Start is called before the first frame update
     void Start()
@@ -21,17 +22,18 @@ public class DoorScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.E) && PlayerIsAtTheDoor == true)
+        if(PlayerIsAtTheDoor == true)
         {
+            player.SetActive(false);
             StartCoroutine(_OpenDoor());
         }
     }
 
     public IEnumerator _OpenDoor(){
         transform.GetComponent<SpriteRenderer>().sprite = OpenDoorImage;
-        player.SetActive(false);
         yield return new WaitForSeconds(TimeBeforeNextScene);
         transform.GetComponent<SpriteRenderer>().sprite = CloseDoorImage;
+        animator.SetBool("IsTeleporting", true);
         yield return new WaitForSeconds(TimeBeforeNextScene);
         SceneSwitcher();
     }
@@ -57,5 +59,6 @@ public class DoorScript : MonoBehaviour
     public void OnTriggerExit2D(Collider2D collision)
     {
         PlayerIsAtTheDoor = false;
+        animator.SetBool("IsTeleporting", false);
     }
 }
