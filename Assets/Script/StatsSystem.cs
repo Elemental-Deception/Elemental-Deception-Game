@@ -11,6 +11,10 @@ public class StatsSystem : MonoBehaviour
     private int XP;
     private int MaxXP;
     private int Level;
+    private int DX;
+    private int DY;
+    private string PlayerElement;
+
 
     public void Start(){
         PlayerPrefs.SetInt("Health", 100);
@@ -21,6 +25,9 @@ public class StatsSystem : MonoBehaviour
         PlayerPrefs.SetInt("XP",0);
         PlayerPrefs.SetInt("MaxXP",100);
         PlayerPrefs.SetInt("Level",0);
+        PlayerPrefs.SetInt("DX", 0);
+        PlayerPrefs.SetInt("DY", 0);
+        PlayerPrefs.SetString("PlayerElement", "");
         
         this.Health = PlayerPrefs.GetInt("Health");
         this.MaxHealth = PlayerPrefs.GetInt("MaxHealth");
@@ -30,6 +37,9 @@ public class StatsSystem : MonoBehaviour
         this.XP = PlayerPrefs.GetInt("XP");
         this.MaxXP = PlayerPrefs.GetInt("MaxXP");
         this.Level = PlayerPrefs.GetInt("Level");
+        this.DX = PlayerPrefs.GetInt("DX");
+        this.DY = PlayerPrefs.GetInt("DY");
+        this.PlayerElement = PlayerPrefs.GetString("PlayerElement");
     }
 
     public void Update(){
@@ -41,6 +51,9 @@ public class StatsSystem : MonoBehaviour
         PlayerPrefs.SetInt("XP",this.XP);
         PlayerPrefs.SetInt("MaxXP",this.MaxXP);
         PlayerPrefs.SetInt("Level",this.Level);
+        PlayerPrefs.SetInt("DX", this.DX);
+        PlayerPrefs.SetInt("DY", this.DY);
+        PlayerPrefs.SetString("PlayerElement", this.PlayerElement);
     }
 
     //Getters
@@ -68,30 +81,59 @@ public class StatsSystem : MonoBehaviour
     public int getLevel(){
         return PlayerPrefs.GetInt("Level");
     }
+    public int getDX(){
+        return PlayerPrefs.GetInt("DX");
+    }
+    public int getDY(){
+        return PlayerPrefs.GetInt("DY");
+    }
+    public string getPlayerElement(){
+        return PlayerPrefs.GetString("PlayerElement");
+    }
     //Setters
     public void setHealth(int Health){
         PlayerPrefs.SetInt("Health", Health);
+        this.Health = Health;
     }
     public void setMaxHealth(int MaxHealth){
         PlayerPrefs.SetInt("MaxHealth", MaxHealth);
+        this.MaxHealth = MaxHealth;
     }
     public void setMana(int Mana){
         PlayerPrefs.SetInt("Mana", Mana);
+        this.Mana = Mana;
     }
     public void setManaRegen(int ManaRegen){
         PlayerPrefs.SetInt("ManaRegen", ManaRegen);
+        this.ManaRegen = ManaRegen;
     }
     public void setMaxMana(int MaxMana){
         PlayerPrefs.SetInt("MaxMana", MaxMana);
+        this.MaxMana = MaxMana;
     }
     public void setXP(int XP){
         PlayerPrefs.SetInt("XP", XP);
+        this.XP = XP;
     }
     public void setMaxXP(int MaxXP){
         PlayerPrefs.SetInt("MaxXP", MaxXP);
+        this.MaxXP = MaxXP;
     }
     public void setLevel(int Level){
         PlayerPrefs.SetInt("Level", Level);
+        this.Level = Level;
+    }
+    public void setDX(int DX){
+        PlayerPrefs.SetInt("DX", DX);
+        this.DX = DX;
+    }
+    public void setDY(int DY){
+        PlayerPrefs.SetInt("DY", DY);
+        this.DY = DY;
+    }
+    public void setPlayerElement(string PlayerElement){
+        PlayerPrefs.SetString("PlayerElement", PlayerElement);
+        this.PlayerElement = PlayerElement;
     }
 
     //Health Functions:
