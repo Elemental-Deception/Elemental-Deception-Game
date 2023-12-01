@@ -32,6 +32,10 @@ namespace Cainos.PixelArtTopDown_Basic
             dir = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
             Vector2 movement = new Vector2(Input.GetAxis("Horizontal"), 0).normalized;
 
+            if(dir == Vector2.zero)
+            {
+                rb.velocity = new Vector2(0.001f,0f);
+            }
             // Set animator parameters
             animator.SetBool("IsMoving", dir != Vector2.zero);
             if (dir != Vector2.zero)
