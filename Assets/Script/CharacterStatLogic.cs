@@ -42,7 +42,6 @@ public class CharacterStatLogic : MonoBehaviour
     private bool isDead = false;
     private float overflow;
     private int KillCount = 0;
-
     private StatsSystem statsSystem;
 
     public void Start()

@@ -2424,6 +2424,10 @@ MonoBehaviour:
   TimeBeforeNextScene: 2
   PlayerIsAtTheTp: 0
   animator: {fileID: 1550326153}
+  HasCondition: 0
+  MeetsCondition: 0
+  IsToFinalVillage: 0
+  DialogueAlreadyTriggered: 0
 --- !u!1001 &742694830
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3044,6 +3048,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 833403917}
+    - targetCorrespondingSourceObject: {fileID: 7947911505737750455, guid: c5bdca1933fde624698bb8c6d6daa44b,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 833403918}
   m_SourcePrefab: {fileID: 100100000, guid: c5bdca1933fde624698bb8c6d6daa44b, type: 3}
 --- !u!1 &833403916 stripped
 GameObject:
@@ -3069,6 +3077,27 @@ MonoBehaviour:
   TimeBeforeNextScene: 2
   PlayerIsAtTheTp: 0
   animator: {fileID: 1550326153}
+  HasCondition: 0
+  MeetsCondition: 0
+  IsToFinalVillage: 0
+  DialogueAlreadyTriggered: 0
+--- !u!114 &833403918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 833403916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 109afe9cdb1ec4648bc4f9075c66bddf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: God
+    sentences:
+    - You're not ready yet...
+    - Try killing two elementals in this tutorial first!
 --- !u!1001 &849801309
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12466,6 +12495,10 @@ MonoBehaviour:
   TimeBeforeNextScene: 2
   PlayerIsAtTheTp: 0
   animator: {fileID: 1550326153}
+  HasCondition: 0
+  MeetsCondition: 0
+  IsToFinalVillage: 0
+  DialogueAlreadyTriggered: 0
 --- !u!1 &1186368576
 GameObject:
   m_ObjectHideFlags: 0

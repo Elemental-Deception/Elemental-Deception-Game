@@ -13,12 +13,14 @@ public class Teleport : MonoBehaviour
     public Animator animator;
     public bool HasCondition;
     public bool MeetsCondition;
-    public bool ConditionType;
+    public bool IsToFinalVillage;
     public bool DialogueAlreadyTriggered;
     private DialogueTrigger dialogueTrigger;
+    private StatsSystem statsSystem;
 
     void Start()
     {
+        statsSystem = new StatsSystem();
         dialogueTrigger = this.GetComponent<DialogueTrigger>();
     }
 
@@ -50,7 +52,7 @@ public class Teleport : MonoBehaviour
         Debug.Log(killCount);
         if(HasCondition)
         {
-            if(!ConditionType)
+            if(!IsToFinalVillage)
             {
                 if(killCount >= 2)
                 {
@@ -59,7 +61,10 @@ public class Teleport : MonoBehaviour
             }
             else
             {
-
+                if(statsSystem.getLevel() >= 10)
+                {
+                    MeetsCondition = true;
+                }
             }
         }
     }

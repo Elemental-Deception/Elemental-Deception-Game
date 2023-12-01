@@ -13113,10 +13113,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scene1: Home Village
-  scene2: AniFinal
+  scene2: AniFire
   player: {fileID: 976994598}
   TimeBeforeNextScene: 2
   PlayerIsAtTheTp: 0
+  animator: {fileID: 0}
+  HasCondition: 0
+  MeetsCondition: 0
+  IsToFinalVillage: 0
+  DialogueAlreadyTriggered: 0
 --- !u!4 &728819201 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7947911505737750448, guid: 91afc0649ae41a64c860a5d49f05ff40,
