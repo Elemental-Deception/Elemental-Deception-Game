@@ -11,15 +11,6 @@ public class StatsSystem
     private int Level;
 
     public StatsSystem(){
-        this.Health = 100;
-        this.MaxHealth = 100;
-        this.Mana = 100;
-        this.ManaRegen = 1;
-        this.MaxMana = 100;
-        this.XP = 0;
-        this.MaxXP = 100;
-        this.Level = 0;
-
         PlayerPrefs.SetInt("Health", 100);
         PlayerPrefs.SetInt("MaxHealth",100);
         PlayerPrefs.SetInt("Mana",100);
@@ -31,99 +22,99 @@ public class StatsSystem
     }
     //Getters
     public int getHealth(){
-        return Health;
+        return PlayerPrefs.GetInt("Health");
     }
     public int getMaxHealth(){
-        return MaxHealth;
+        return PlayerPrefs.GetInt("MaxHealth");
     }
     public int getMana(){
-        return Mana;
+        return PlayerPrefs.GetInt("Mana");
     }
     public int getManaRegen(){
-        return ManaRegen;
+        return PlayerPrefs.GetInt("ManaRegen");
     }
     public int getMaxMana(){
-        return MaxMana;
+        return PlayerPrefs.GetInt("MaxMana");
     }
     public int getXP(){
-        return XP;
+        return PlayerPrefs.GetInt("XP");
     }
     public int getMaxXP(){
-        return MaxXP;
+        return PlayerPrefs.GetInt("MaxXP");
     }
     public int getLevel(){
-        return Level;
+        return PlayerPrefs.GetInt("Level");
     }
     //Setters
     public void setHealth(int Health){
-        this.Health = Health;
+        PlayerPrefs.SetInt("Health", Health);
     }
     public void setMaxHealth(int MaxHealth){
-        this.MaxHealth = MaxHealth;
+        PlayerPrefs.SetInt("MaxHealth", MaxHealth);
     }
     public void setMana(int Mana){
-        this.Mana = Mana;
+        PlayerPrefs.SetInt("Mana", Mana);
     }
     public void setManaRegen(int ManaRegen){
-        this.ManaRegen = ManaRegen;
+        PlayerPrefs.SetInt("ManaRegen", ManaRegen);
     }
     public void setMaxMana(int MaxMana){
-        this.MaxMana = MaxMana;
+        PlayerPrefs.SetInt("MaxMana", MaxMana);
     }
     public void setXP(int XP){
-        this.XP = XP;
+        PlayerPrefs.SetInt("XP", XP);
     }
     public void setMaxXP(int MaxXP){
-        this.MaxXP = MaxXP;
+        PlayerPrefs.SetInt("MaxXP", MaxXP);
     }
     public void setLevel(int Level){
-        this.Level = Level;
+        PlayerPrefs.SetInt("Level", Level);
     }
 
     //Health Functions:
     public void subHealth(int amount){
-        Health -= amount;
-        if(Health < 0) Health = 0;
+        PlayerPrefs.SetInt("Health", (PlayerPrefs.GetInt("Health") - amount));
+        if(PlayerPrefs.GetInt("Health") < 0) PlayerPrefs.SetInt("Health", 0);
     }
     public void addHealth(int amount){
-        Health += amount;
-        if(Health > MaxHealth) Health = MaxHealth;
+        PlayerPrefs.SetInt("Health", (PlayerPrefs.GetInt("Health") + amount));
+        if(PlayerPrefs.GetInt("Health") > PlayerPrefs.GetInt("MaxHealth")) PlayerPrefs.SetInt("Health", PlayerPrefs.GetInt("MaxHealth"));
     }
     public float HealthPercent(){
-        if(Health == 0) return 0;
-        return (float)Health / MaxHealth;
+        if(PlayerPrefs.GetInt("Health") == 0) return 0;
+        return (float)PlayerPrefs.GetInt("Health") / PlayerPrefs.GetInt("MaxHealth");
     }
     //Mana Functions:
     public void subMana(int amount){
-        Mana -= amount;
-        if(Mana < 0) Mana = 0;
+        PlayerPrefs.SetInt("Mana", (PlayerPrefs.GetInt("Mana") - amount));
+        if(PlayerPrefs.GetInt("Mana") < 0) PlayerPrefs.SetInt("Mana", 0);
     }
     public void addMana(int amount){
-        Mana += amount;
-        if(Mana > MaxMana) Mana = MaxMana;
+        PlayerPrefs.SetInt("Mana", (PlayerPrefs.GetInt("Mana") + amount));
+        if(PlayerPrefs.GetInt("Mana") > PlayerPrefs.GetInt("MaxMana")) PlayerPrefs.SetInt("Mana", PlayerPrefs.GetInt("MaxMana"));
     }
     public float ManaPercent(){
-        if(Mana == 0) return 0;
-        return (float)Mana / MaxMana;
+        if(PlayerPrefs.GetInt("Mana") == 0) return 0;
+        return (float)PlayerPrefs.GetInt("Mana") / PlayerPrefs.GetInt("MaxMana");
     }
     //XP Functions:
     public void subXP(int amount){
-        XP -= amount;
-        while(XP < 0){
-            XP += MaxXP;
-            if(Level <= 0) break;
-            Level -=1;
+        PlayerPrefs.SetInt("XP", (PlayerPrefs.GetInt("XP") - amount));
+        while(PlayerPrefs.GetInt("XP") < 0){
+            PlayerPrefs.SetInt("XP",  PlayerPrefs.GetInt("XP") + PlayerPrefs.GetInt("MaxXP"));
+            if(PlayerPrefs.GetInt("Level") <= 0) break;
+            PlayerPrefs.SetInt("Level", PlayerPrefs.GetInt("Level") - 1);
         };
     }
     public void addXP(int amount){
-        XP += amount;
-        while(XP > MaxXP){
-            XP -= MaxXP;
-            Level +=1;
+        PlayerPrefs.SetInt("XP", (PlayerPrefs.GetInt("XP") + amount));
+        while(PlayerPrefs.GetInt("XP") > PlayerPrefs.GetInt("MaxXP")){
+            PlayerPrefs.SetInt("XP",  PlayerPrefs.GetInt("XP") - PlayerPrefs.GetInt("MaxXP"));
+            PlayerPrefs.SetInt("Level", PlayerPrefs.GetInt("Level") + 1);
         }
     }
     public float XPPercent(){
-        if(XP == 0) return 0;
-        return (float)XP / MaxXP;
+        if(PlayerPrefs.GetInt("XP") == 0) return 0;
+        return (float)PlayerPrefs.GetInt("XP") / PlayerPrefs.GetInt("MaxXP");
     }
 }
