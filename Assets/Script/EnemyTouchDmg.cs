@@ -10,7 +10,6 @@ public class EnemyTouchDmg : MonoBehaviour
         GameObject collidedObject = collision.gameObject;
 
         // Log the name of the object
-        //Debug.Log("Collided with: " + collidedObject.name);
 
         CharacterStatLogic enemy = collidedObject.GetComponent<CharacterStatLogic>();
         if (enemy != null)

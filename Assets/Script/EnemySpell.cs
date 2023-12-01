@@ -10,8 +10,8 @@ public class EnemySpell : MonoBehaviour
         // You can access the GameObject that you collided with
         GameObject collidedObject = collision.gameObject;
 
-        // Log the name of the object
-        //Debug.Log("Collided with: " + collidedObject.name);
+        Debug.Log("Collided object with: " + collidedObject.name);
+        Debug.Log("enemy object with: " + this.name);
 
         CharacterStatLogic enemy = collidedObject.GetComponent<CharacterStatLogic>();
         if (enemy != null)

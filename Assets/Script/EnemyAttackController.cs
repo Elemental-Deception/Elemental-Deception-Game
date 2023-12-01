@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class EnemySpellController : MonoBehaviour
+public class EnemyAttackController : MonoBehaviour
 {
     private Transform player;
     public float attackRange = 3.0f; // Set your desired attack range
@@ -21,7 +21,7 @@ public class EnemySpellController : MonoBehaviour
         boxCollider.isTrigger = true; // Set the collider to be a trigger
         boxCollider.enabled = false; // Initially disable the collider
 
-        audioSource = attack.GetComponent<AudioSource>();
+        //audioSource = attack.GetComponent<AudioSource>();
         player = GameObject.FindWithTag("Player").transform; // Find the player
     }
 
@@ -49,7 +49,7 @@ public class EnemySpellController : MonoBehaviour
         else if (stateInfo.IsName("Attack") && stateInfo.normalizedTime <= 1.0f)
         {
             boxCollider.enabled = true; // Enable the collider for the attack
-            audioSource.enabled = true;
+           // audioSource.enabled = true;
         }
         else
         {
@@ -61,7 +61,7 @@ public class EnemySpellController : MonoBehaviour
             else
             {
                 boxCollider.enabled = false; // Disable collider when animation is done
-                audioSource.enabled = false;
+                //audioSource.enabled = false;
             }
         }
 

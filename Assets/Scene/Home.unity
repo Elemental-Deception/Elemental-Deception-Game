@@ -711,6 +711,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 187875319}
   m_CullTransparentMesh: 1
+--- !u!1 &204408384
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 204408386}
+  - component: {fileID: 204408385}
+  m_Layer: 5
+  m_Name: DynamicText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &204408385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 204408384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf7c18620c323414a849913f889acb05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _defaultData: {fileID: 11400000, guid: f4d1446dbbb3d8c41a81f85d0b1bd71f, type: 2}
+  _canvasPrefab: {fileID: 1926280506753864649, guid: e124e19729a322b4281287dcc0eb622b,
+    type: 3}
+  _mainCamera: {fileID: 0}
+--- !u!4 &204408386
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 204408384}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 7.4568853, y: 3.265807, z: 0.14217901}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &211675921
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4153,6 +4201,7 @@ MonoBehaviour:
   OpenDoorImage: {fileID: 21300160, guid: 29c9cded5e558164aaf8c9bf08aa1510, type: 3}
   CloseDoorImage: {fileID: 21300158, guid: 29c9cded5e558164aaf8c9bf08aa1510, type: 3}
   TimeBeforeNextScene: 1
+  animator: {fileID: 471994198}
   PlayerIsAtTheDoor: 0
 --- !u!4 &1094246096 stripped
 Transform:
@@ -5528,7 +5577,12 @@ PrefabInstance:
         type: 3}
       propertyPath: XPBar
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1315310273}
+    - target: {fileID: 1756781823607731958, guid: f7c79e3194127d64eb5474288cbc5f9c,
+        type: 3}
+      propertyPath: XPText
+      value: 
+      objectReference: {fileID: 1166545509}
     - target: {fileID: 1756781823607731958, guid: f7c79e3194127d64eb5474288cbc5f9c,
         type: 3}
       propertyPath: Element
@@ -5538,22 +5592,22 @@ PrefabInstance:
         type: 3}
       propertyPath: ManaBar
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1915569255}
     - target: {fileID: 1756781823607731958, guid: f7c79e3194127d64eb5474288cbc5f9c,
         type: 3}
       propertyPath: ManaText
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1437728368}
     - target: {fileID: 1756781823607731958, guid: f7c79e3194127d64eb5474288cbc5f9c,
         type: 3}
       propertyPath: HealthBar
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2142907228}
     - target: {fileID: 1756781823607731958, guid: f7c79e3194127d64eb5474288cbc5f9c,
         type: 3}
       propertyPath: LevelText
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 59863444}
     - target: {fileID: 1756781823607731958, guid: f7c79e3194127d64eb5474288cbc5f9c,
         type: 3}
       propertyPath: sceneName
@@ -5563,7 +5617,7 @@ PrefabInstance:
         type: 3}
       propertyPath: HealthText
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1785964729}
     - target: {fileID: 1756781823607731958, guid: f7c79e3194127d64eb5474288cbc5f9c,
         type: 3}
       propertyPath: ShadowText
@@ -5571,14 +5625,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1756781823607731958, guid: f7c79e3194127d64eb5474288cbc5f9c,
         type: 3}
+      propertyPath: XPShadowText
+      value: 
+      objectReference: {fileID: 590202455}
+    - target: {fileID: 1756781823607731958, guid: f7c79e3194127d64eb5474288cbc5f9c,
+        type: 3}
       propertyPath: ManaShadowText
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2007810974}
     - target: {fileID: 1756781823607731958, guid: f7c79e3194127d64eb5474288cbc5f9c,
         type: 3}
       propertyPath: LevelShadowText
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1313018077}
     - target: {fileID: 1756781823607731958, guid: f7c79e3194127d64eb5474288cbc5f9c,
         type: 3}
       propertyPath: sceneChangeTime
@@ -5588,12 +5647,12 @@ PrefabInstance:
         type: 3}
       propertyPath: HealthShadowText
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 934616752}
     - target: {fileID: 5674357420884093740, guid: f7c79e3194127d64eb5474288cbc5f9c,
         type: 3}
       propertyPath: cam
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1076953612}
     - target: {fileID: 5674357420884093740, guid: f7c79e3194127d64eb5474288cbc5f9c,
         type: 3}
       propertyPath: spell
@@ -5613,7 +5672,7 @@ PrefabInstance:
         type: 3}
       propertyPath: cam
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1076953612}
     - target: {fileID: 8081195595284689011, guid: f7c79e3194127d64eb5474288cbc5f9c,
         type: 3}
       propertyPath: PauseMenu
@@ -9904,6 +9963,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2075250618}
   m_CullTransparentMesh: 1
+--- !u!114 &2142907228 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6848739073536652053, guid: f1419c2a3f5ecf44e824039f908fea60,
+    type: 3}
+  m_PrefabInstance: {fileID: 1649540848}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -9915,3 +9986,4 @@ SceneRoots:
   - {fileID: 304959117}
   - {fileID: 1979147359}
   - {fileID: 1076953613}
+  - {fileID: 204408386}

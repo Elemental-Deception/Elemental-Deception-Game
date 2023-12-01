@@ -112,7 +112,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 1.713212, y: -0.14811182}
+  m_Offset: {x: 1.713212, y: -2.0640078}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -123,7 +123,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5.188142, y: 2.0579414}
+  m_Size: {x: 5.188142, y: 4.374838}
   m_EdgeRadius: 0
 --- !u!82 &8044753351302333501
 AudioSource:
@@ -377,7 +377,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f39f2364e87975d46942f116bccd1f9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Enemy: {fileID: 6813806745071676198}
+  attackRange: 3
   attack: {fileID: 6699874023666169404}
 --- !u!50 &9074657099505737807
 Rigidbody2D:
@@ -438,7 +438,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.5094296, y: -2.7300377}
+  m_Offset: {x: 0, y: -1}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -449,7 +449,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.9503953, y: 1.8598411}
+  m_Size: {x: 3.5, y: 6}
   m_EdgeRadius: 0
 --- !u!82 &6698759362171837158
 AudioSource:
@@ -463,7 +463,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: e21eda9966181454da65499a6e90c6ba, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.208
+  m_Volume: 0.39
   m_Pitch: 1
   Loop: 1
   Mute: 0

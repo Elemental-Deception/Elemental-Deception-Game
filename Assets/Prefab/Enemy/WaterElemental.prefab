@@ -156,7 +156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f39f2364e87975d46942f116bccd1f9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Enemy: {fileID: 6046683638269685592}
+  attackRange: 3
   attack: {fileID: 8368706443150158973}
 --- !u!50 &3883523888133684028
 Rigidbody2D:
@@ -217,7 +217,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.5094296, y: -2.7300377}
+  m_Offset: {x: 0, y: -1}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -228,7 +228,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.9503953, y: 1.8598411}
+  m_Size: {x: 3.5, y: 6}
   m_EdgeRadius: 0
 --- !u!82 &1893448166523679906
 AudioSource:

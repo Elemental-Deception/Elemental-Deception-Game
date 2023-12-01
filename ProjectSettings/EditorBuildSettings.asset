@@ -51,9 +51,12 @@ EditorBuildSettings:
     path: Assets/Scene/AniFire.unity
     guid: 44886218983c89f4692df4c3c0f0eb51
   - enabled: 1
-    path: Assets/Scene/AniFinal.unity
+    path: Assets/Scene/AniFInal.unity
     guid: ba4c885b7bdffef46a33d2a6c72ad7ca
   - enabled: 1
     path: Assets/Scene/AniAir.unity
     guid: 2edad2d951d082849a0ff18018428c44
+  - enabled: 1
+    path: Assets/Scene/ChooseYourElement.unity
+    guid: 6abce53d192cd5d439ddb676bc368510
   m_configObjects: {}
