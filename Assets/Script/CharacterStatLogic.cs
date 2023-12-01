@@ -83,7 +83,6 @@ public class CharacterStatLogic : MonoBehaviour
             animator.SetBool("IsAlive", false);
             isDead = true; // Mark character as dead
             StartCoroutine(WaitToLoadScene());
-            statsSystem.resetStats();
         }
     }
 
@@ -91,6 +90,7 @@ public class CharacterStatLogic : MonoBehaviour
     {
         yield return new WaitForSeconds(sceneChangeTime);
         SceneManager.LoadScene(sceneName);
+        statsSystem.resetStats();
     }
 
     public bool SpendMana(int manaCost)
