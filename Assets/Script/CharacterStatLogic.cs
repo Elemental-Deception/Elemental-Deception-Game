@@ -89,7 +89,7 @@ public class CharacterStatLogic : MonoBehaviour
             animator.SetBool("IsAlive", false);
             isDead = true; // Mark character as dead
             StartCoroutine(WaitToLoadScene());
-            statsSystem.resetStats(100, 100, 100, 1, 100, 0, 100, 1, 0, 0, element);
+            statsSystem.resetStats(100, 100, 100, 1, 100, 0, 100, 1, 0, 0, statsSystem.getPlayerElement());
         }
     }
 

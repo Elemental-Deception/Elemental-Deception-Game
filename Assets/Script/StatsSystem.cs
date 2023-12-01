@@ -155,7 +155,7 @@ public class StatsSystem : MonoBehaviour
         if(PlayerPrefs.GetInt("XP") == 0) return 0;
         return (float)PlayerPrefs.GetInt("XP") / PlayerPrefs.GetInt("MaxXP");
     }
-    public void resetStats(Health, MaxHealth, Mana, ManaRegen, MaxMana, XP, MaxXP, Level, DX, DY, PlayerElement){
+    public void resetStats(int Health, int MaxHealth, int Mana, int ManaRegen, int MaxMana, int XP, int MaxXP, int Level, int DX, int DY, string PlayerElement){
         this.Health = Health; 
         this.MaxHealth = MaxHealth;
         this.Mana = Mana;
