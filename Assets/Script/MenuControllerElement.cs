@@ -8,9 +8,16 @@ using UnityEngine.UI;
 public class MainMenuElement : MonoBehaviour
 {
     public string sceneName;
+    private StatsSystem statsSystem;
 
-    public void LoadScene()
+    public void Start()
     {
+        statsSystem = new StatsSystem();
+    }
+
+    public void LoadScene(string element)
+    {
+        statsSystem.setPlayerElement(element);
         SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
     }
 }

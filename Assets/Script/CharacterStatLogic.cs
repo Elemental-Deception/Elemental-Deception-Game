@@ -53,7 +53,7 @@ public class CharacterStatLogic : MonoBehaviour
         teleporter = GameObject.Find("PF Props Altar");
         teleporterScript = teleporter.GetComponent<Teleport>();
         statsSystem.setPlayerElement(Element);
-        ChooseElement(Element);
+        ChooseElement(statsSystem.getPlayerElement());
     }
     private void Update(){
         HealthBar.fillAmount = statsSystem.HealthPercent();
