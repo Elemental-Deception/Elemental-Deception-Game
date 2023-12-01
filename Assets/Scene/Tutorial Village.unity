@@ -7227,6 +7227,8 @@ MonoBehaviour:
     - You are the only remaining mage who can save the world from the rogue elements...
     - "Traverse this tutorial using: W(\u2191) A(\u2190) S(\u2193) D(\u2192)"
     - To attack, aim with the mouse and use Z, X, and C for different spells!
+    - "One more thing; Fire \u2192 Earth, Earth \u2192 Water, Water \u2192 Fire,
+      and so on..."
 --- !u!1 &1201828841
 GameObject:
   m_ObjectHideFlags: 0

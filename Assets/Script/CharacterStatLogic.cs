@@ -132,10 +132,10 @@ public class CharacterStatLogic : MonoBehaviour
     {
         if(!isDead)
         {
-            statsSystem.addHealth((int)HealthDelta);
+            statsSystem.addHealth(HealthDelta);
             HealthBar.fillAmount = statsSystem.HealthPercent();
-            HealthText.SetText((int)(statsSystem.getHealth()) + "/" + (int)(statsSystem.getMaxHealth()));
-            HealthShadowText.SetText((int)(statsSystem.getHealth()) + "/" + (int)(statsSystem.getMaxHealth()));
+            HealthText.SetText((int)Math.Round(statsSystem.getHealth()) + "/" + (int)Math.Round(statsSystem.getMaxHealth()));
+            HealthShadowText.SetText((int)Math.Round(statsSystem.getHealth()) + "/" + (int)Math.Round(statsSystem.getMaxHealth()));
         }
     }
 
@@ -143,10 +143,10 @@ public class CharacterStatLogic : MonoBehaviour
     {
         if(!isDead)
         {
-            statsSystem.addMana((int)ManaDelta);
+            statsSystem.addMana((float)ManaDelta);
             ManaBar.fillAmount = statsSystem.ManaPercent();
-            ManaText.SetText((int)(statsSystem.getMana()) + "/" + (int)(statsSystem.getMaxMana()));
-            ManaShadowText.SetText((int)(statsSystem.getMana()) + "/" + (int)(statsSystem.getMaxMana()));
+            ManaText.SetText((int)Math.Round(statsSystem.getMana()) + "/" + (int)Math.Round(statsSystem.getMaxMana()));
+            ManaShadowText.SetText((int)Math.Round(statsSystem.getMana()) + "/" + (int)Math.Round(statsSystem.getMaxMana()));
         }
     }
 
@@ -155,12 +155,12 @@ public class CharacterStatLogic : MonoBehaviour
         int Level = statsSystem.getLevel();
         if(!isDead)
         {
-            statsSystem.addXP((int)XPDelta);
+            statsSystem.addXP(XPDelta);
             KillCount++;
             teleporterScript.CheckIfMeetsCondition(KillCount);
             XPBar.fillAmount = statsSystem.XPPercent();
-            XPText.SetText((int)(statsSystem.getXP()) + "/" + (int)(statsSystem.getMaxXP()));
-            XPShadowText.SetText((int)(statsSystem.getXP()) + "/" + (int)(statsSystem.getMaxXP()));
+            XPText.SetText((int)Math.Round(statsSystem.getXP()) + "/" + (int)Math.Round(statsSystem.getMaxXP()));
+            XPShadowText.SetText((int)Math.Round(statsSystem.getXP()) + "/" + (int)Math.Round(statsSystem.getMaxXP()));
         }
         if(Level != statsSystem.getLevel())
         {

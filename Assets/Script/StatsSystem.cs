@@ -110,11 +110,11 @@ public class StatsSystem : MonoBehaviour
     }
 
     //Health Functions:
-    public void subHealth(int amount){
+    public void subHealth(float amount){
         PlayerPrefs.SetFloat("Health", (PlayerPrefs.GetFloat("Health") - amount));
         if(PlayerPrefs.GetFloat("Health") < 0f) PlayerPrefs.SetFloat("Health", 0f);
     }
-    public void addHealth(int amount){
+    public void addHealth(float amount){
         PlayerPrefs.SetFloat("Health", (PlayerPrefs.GetFloat("Health") + amount));
         if(PlayerPrefs.GetFloat("Health") > PlayerPrefs.GetFloat("MaxHealth")) PlayerPrefs.SetFloat("Health", PlayerPrefs.GetFloat("MaxHealth"));
     }
@@ -123,11 +123,11 @@ public class StatsSystem : MonoBehaviour
         return (float)PlayerPrefs.GetFloat("Health") / PlayerPrefs.GetFloat("MaxHealth");
     }
     //Mana Functions:
-    public void subMana(int amount){
+    public void subMana(float amount){
         PlayerPrefs.SetFloat("Mana", (PlayerPrefs.GetFloat("Mana") - amount));
         if(PlayerPrefs.GetFloat("Mana") < 0) PlayerPrefs.SetFloat("Mana", 0);
     }
-    public void addMana(int amount){
+    public void addMana(float amount){
         PlayerPrefs.SetFloat("Mana", (PlayerPrefs.GetFloat("Mana") + amount));
         if(PlayerPrefs.GetFloat("Mana") > PlayerPrefs.GetFloat("MaxMana")) PlayerPrefs.SetFloat("Mana", PlayerPrefs.GetFloat("MaxMana"));
     }
@@ -136,7 +136,7 @@ public class StatsSystem : MonoBehaviour
         return (float)PlayerPrefs.GetFloat("Mana") / PlayerPrefs.GetFloat("MaxMana");
     }
     //XP Functions:
-    public void subXP(int amount){
+    public void subXP(float amount){
         PlayerPrefs.SetFloat("XP", (PlayerPrefs.GetFloat("XP") - amount));
         while(PlayerPrefs.GetFloat("XP") < 0){
             PlayerPrefs.SetFloat("XP",  PlayerPrefs.GetFloat("XP") + PlayerPrefs.GetFloat("MaxXP"));
@@ -144,7 +144,7 @@ public class StatsSystem : MonoBehaviour
             PlayerPrefs.SetFloat("Level", PlayerPrefs.GetFloat("Level") - 1);
         };
     }
-    public void addXP(int amount){
+    public void addXP(float amount){
         PlayerPrefs.SetFloat("XP", (PlayerPrefs.GetFloat("XP") + amount));
         while(PlayerPrefs.GetFloat("XP") > PlayerPrefs.GetFloat("MaxXP")){
             PlayerPrefs.SetFloat("XP",  PlayerPrefs.GetFloat("XP") - PlayerPrefs.GetFloat("MaxXP"));
