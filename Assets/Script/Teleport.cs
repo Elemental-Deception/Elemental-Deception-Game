@@ -11,10 +11,15 @@ public class Teleport : MonoBehaviour
     public float TimeBeforeNextScene;
     public bool PlayerIsAtTheTp;
     public Animator animator;
+    public bool HasCondition;
+    public bool MeetsCondition;
+    public bool ConditionType;
+    public bool DialogueAlreadyTriggered;
+    private DialogueTrigger dialogueTrigger;
 
     void Start()
     {
-
+        dialogueTrigger = this.GetComponent<DialogueTrigger>();
     }
 
     // Update is called once per frame
@@ -22,9 +27,41 @@ public class Teleport : MonoBehaviour
     {
         if(PlayerIsAtTheTp)
         {
-            animator.SetBool("IsTeleporting", true);
-            StartCoroutine(SceneSwitcher());
-        }    
+            if(!HasCondition)
+            {
+                animator.SetBool("IsTeleporting", true);
+                StartCoroutine(SceneSwitcher());
+            }
+            else if(HasCondition && MeetsCondition)
+            {
+                animator.SetBool("IsTeleporting", true);
+                StartCoroutine(SceneSwitcher());
+            }
+            else if(!DialogueAlreadyTriggered)
+            {
+                DialogueAlreadyTriggered = true;
+                dialogueTrigger.TriggerDialogue();
+            }
+        }
+    }
+
+    public void CheckIfMeetsCondition(int killCount)
+    {
+        Debug.Log(killCount);
+        if(HasCondition)
+        {
+            if(!ConditionType)
+            {
+                if(killCount >= 2)
+                {
+                    MeetsCondition = true;
+                }
+            }
+            else
+            {
+
+            }
+        }
     }
 
     public IEnumerator SceneSwitcher()
@@ -44,6 +81,7 @@ public class Teleport : MonoBehaviour
             }
         }
     }
+
     public void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.tag == "Player")
@@ -51,9 +89,11 @@ public class Teleport : MonoBehaviour
             PlayerIsAtTheTp = true;
         }
     }
+
     public void OnTriggerExit2D(Collider2D collision)
     {
         PlayerIsAtTheTp = false;
+        DialogueAlreadyTriggered = false;
         animator.SetBool("IsTeleporting", false);
     }
 }

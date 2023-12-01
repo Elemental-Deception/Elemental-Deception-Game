@@ -42,17 +42,22 @@ public class CharacterStatLogic : MonoBehaviour
 
     public CharacterStats characterStats = new CharacterStats();
     private GameObject player;
+    private GameObject teleporter;
+    private Teleport teleporterScript;
     public DynamicTextData XPTextData;
     private Vector3 damageVector;
     private Vector3 XPVector;
     private Animator animator;
     private bool isDead = false;
     private float overflow;
+    private int KillCount = 0;
 
     public void Start()
     {
         player = GameObject.FindWithTag("Player");
         animator = GetComponent<Animator>();
+        teleporter = GameObject.Find("PF Props Altar");
+        teleporterScript = teleporter.GetComponent<Teleport>();
         ChooseElement(Element);
     }
 
@@ -181,6 +186,11 @@ public class CharacterStatLogic : MonoBehaviour
             if(overflow != 0)
             {
                 GainXP(overflow);
+            }
+            else
+            {
+                KillCount++;
+                teleporterScript.CheckIfMeetsCondition(KillCount);
             }
         }
     }
