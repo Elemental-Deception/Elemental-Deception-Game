@@ -36,15 +36,15 @@ public class EnemyStatLogic : MonoBehaviour
     public void TakeDmg(int damage)
     {
         float temp;
-        if(enemy.name == "FireElemental")
+        if(enemy.name.Contains("FireElemental"))
         {
             damage = (int)Math.Round(damage * playerLogic.damageSystem.FireMultiplier);
         }
-        else if(enemy.name == "WaterElemental")
+        else if(enemy.name.Contains("WaterElemental"))
         {
             damage = (int)Math.Round(damage * playerLogic.damageSystem.WaterMultiplier);
         }
-        else if(enemy.name == "EarthElemental")
+        else if(enemy.name.Contains("EarthElemental"))
         {
             damage = (int)Math.Round(damage * playerLogic.damageSystem.EarthMultiplier);
         }

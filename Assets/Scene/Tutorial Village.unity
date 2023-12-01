@@ -16819,7 +16819,7 @@ MonoBehaviour:
   animator: {fileID: 1972792527}
   HasCondition: 1
   MeetsCondition: 0
-  ConditionType: 0
+  IsToFinalVillage: 0
   DialogueAlreadyTriggered: 0
 --- !u!114 &2031033958
 MonoBehaviour:

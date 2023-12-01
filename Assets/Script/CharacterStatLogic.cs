@@ -21,7 +21,6 @@ public class CharacterStatLogic : MonoBehaviour
     public TMP_Text ManaShadowText;
     public TMP_Text XPText;
     public TMP_Text XPShadowText;
-    public string Element;
     public double ManaFactor;
     public class DamageSystem
     {
@@ -51,7 +50,6 @@ public class CharacterStatLogic : MonoBehaviour
         animator = GetComponent<Animator>();
         teleporter = GameObject.Find("PF Props Altar");
         teleporterScript = teleporter.GetComponent<Teleport>();
-        statsSystem.setPlayerElement(Element);
         ChooseElement(statsSystem.getPlayerElement());
     }
     private void Update(){
@@ -68,8 +66,6 @@ public class CharacterStatLogic : MonoBehaviour
     private void FixedUpdate()
     {
         double ManaDelta = ManaFactor * statsSystem.getManaRegen() * Time.deltaTime;
-        ManaText.SetText((int)(statsSystem.getMana()) + "/" + (int)(statsSystem.getMaxMana()));
-        ManaShadowText.SetText((int)(statsSystem.getMana()) + "/" + (int)(statsSystem.getMaxMana()));
         GainMana(ManaDelta);
     }
 
