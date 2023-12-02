@@ -138,37 +138,34 @@ public class StatsSystem : MonoBehaviour
     //XP Functions:
     public void subXP(float amount){
         PlayerPrefs.SetFloat("XP", (PlayerPrefs.GetFloat("XP") - amount));
-        while(PlayerPrefs.GetFloat("XP") < 0){
+        while(PlayerPrefs.GetFloat("XP") <= 0){
             PlayerPrefs.SetFloat("XP",  PlayerPrefs.GetFloat("XP") + PlayerPrefs.GetFloat("MaxXP"));
-            if(PlayerPrefs.GetFloat("Level") <= 0) break;
-            PlayerPrefs.SetFloat("Level", PlayerPrefs.GetFloat("Level") - 1);
+            if(PlayerPrefs.GetInt("Level") <= 0) break;
+            PlayerPrefs.SetInt("Level", PlayerPrefs.GetInt("Level") - 1);
         };
     }
     public void addXP(float amount){
-        Debug.Log("xp "+ PlayerPrefs.GetFloat("XP"));
-        Debug.Log("max "+ PlayerPrefs.GetFloat("MaxXP"));
-        Debug.Log("amount" + amount);
         PlayerPrefs.SetFloat("XP", (PlayerPrefs.GetFloat("XP") + amount));
-        while(PlayerPrefs.GetFloat("XP") > PlayerPrefs.GetFloat("MaxXP")){
+        while(PlayerPrefs.GetFloat("XP") >= PlayerPrefs.GetFloat("MaxXP")){
             PlayerPrefs.SetFloat("XP",  PlayerPrefs.GetFloat("XP") - PlayerPrefs.GetFloat("MaxXP"));
-            PlayerPrefs.SetFloat("Level", PlayerPrefs.GetFloat("Level") + 1);
+            PlayerPrefs.SetInt("Level", (PlayerPrefs.GetInt("Level") + 1));
         }
     }
     public float XPPercent(){
         if(PlayerPrefs.GetFloat("XP") == 0) return 0;
         return PlayerPrefs.GetFloat("XP") / PlayerPrefs.GetFloat("MaxXP");
     }
-    public void resetStats(float Health, float MaxHealth, float Mana, float ManaRegen, float MaxMana, float XP, float MaxXP, int Level, int DX, int DY, string PlayerElement){
-        this.Health = Health; 
-        this.MaxHealth = MaxHealth;
-        this.Mana = Mana;
-        this.ManaRegen = ManaRegen;
-        this.MaxMana = MaxMana;
-        this.XP = XP;
-        this.MaxXP = MaxXP;
-        this.Level = Level;
-        this.DX = DX;
-        this.DY = DY;
+    public void resetStats(string PlayerElement){
+        this.Health = (float)100; 
+        this.MaxHealth = (float)100;
+        this.Mana = (float)100;
+        this.ManaRegen = (float)1;
+        this.MaxMana = (float)100;
+        this.XP = (float)0;
+        this.MaxXP = (float)100;
+        this.Level = 1;
+        this.DX = 0;
+        this.DY = 0;
         this.PlayerElement = PlayerElement;
         
         PlayerPrefs.SetFloat("Health", this.Health);
@@ -178,10 +175,10 @@ public class StatsSystem : MonoBehaviour
         PlayerPrefs.SetFloat("MaxMana", this.MaxMana);
         PlayerPrefs.SetFloat("XP", this.XP);
         PlayerPrefs.SetFloat("MaxXP", this.MaxXP);
-        PlayerPrefs.SetInt("Level", this.Level);
-        PlayerPrefs.SetInt("DX", this.DX);
-        PlayerPrefs.SetInt("DY", this.DY);
-        PlayerPrefs.SetString("PlayerElement", this.PlayerElement);
+        PlayerPrefs.SetInt("Level", 1);
+        PlayerPrefs.SetInt("DX", 0);
+        PlayerPrefs.SetInt("DY", 0);
+        PlayerPrefs.SetString("PlayerElement", PlayerElement);
     }
 
 }

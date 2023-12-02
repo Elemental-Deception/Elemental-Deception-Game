@@ -49,7 +49,6 @@ public class Teleport : MonoBehaviour
 
     public void CheckIfMeetsCondition(int killCount)
     {
-        Debug.Log(killCount);
         if(HasCondition)
         {
             if(!IsToFinalVillage)

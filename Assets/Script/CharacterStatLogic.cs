@@ -6,6 +6,7 @@ using TMPro;
 using System;
 using UnityEngine.SceneManagement;
 
+
 public class CharacterStatLogic : MonoBehaviour
 {
     public Image HealthBar;
@@ -62,6 +63,8 @@ public class CharacterStatLogic : MonoBehaviour
         XPBar.fillAmount = statsSystem.XPPercent();
         XPText.SetText((int)(statsSystem.getXP()) + "/" + (int)(statsSystem.getMaxXP()));
         XPShadowText.SetText((int)(statsSystem.getXP()) + "/" + (int)(statsSystem.getMaxXP()));
+        LevelText.SetText("Level: <color=#32CD32>" + (statsSystem.getLevel()) + "</color>");
+        LevelShadowText.SetText("Level: " + (statsSystem.getLevel()));
     }
     private void FixedUpdate()
     {
@@ -152,8 +155,7 @@ public class CharacterStatLogic : MonoBehaviour
     public void GainXP(float XPDelta)
     {
         int Level = statsSystem.getLevel();
-        if(!isDead)
-        {
+        if(!isDead){
             statsSystem.addXP(XPDelta);
             KillCount++;
             teleporterScript.CheckIfMeetsCondition(KillCount);
@@ -161,7 +163,7 @@ public class CharacterStatLogic : MonoBehaviour
             XPText.SetText((int)Math.Round(statsSystem.getXP()) + "/" + (int)Math.Round(statsSystem.getMaxXP()));
             XPShadowText.SetText((int)Math.Round(statsSystem.getXP()) + "/" + (int)Math.Round(statsSystem.getMaxXP()));
         }
-        if(Level != statsSystem.getLevel())
+        if(Level < statsSystem.getLevel())
         {
             LevelUp();
         }
@@ -169,20 +171,21 @@ public class CharacterStatLogic : MonoBehaviour
 
     public void LevelUp()
     {
+        //Text:
+        LevelText.SetText("Level: <color=#32CD32>" + (statsSystem.getLevel()) + "</color>");
+        LevelShadowText.SetText("Level: " + (statsSystem.getLevel()));
         XPVector = new Vector3(player.transform.position.x, player.transform.position.y + (float)0.5, player.transform.position.z);
         DynamicTextManager.CreateText2D(XPVector, "Level Up", XPTextData);
-        LevelText.SetText("Level: <color=#32CD32>" + (int)(statsSystem.getLevel()) + "</color>");
-        LevelShadowText.SetText("Level: " + (int)(statsSystem.getLevel()));
 
+        //Stat Increase:
         damageSystem.DamageMultiplier = (float)1.2 * damageSystem.DamageMultiplier;
-
         statsSystem.setMaxHealth((int)((float)1.2 * statsSystem.getMaxHealth()));
         statsSystem.setMaxMana((int)((float)1.2 * statsSystem.getMaxMana()));
         statsSystem.setMaxXP((int)((float)1.2 * statsSystem.getMaxXP()));
         statsSystem.setManaRegen((int)((float)1.2 * statsSystem.getManaRegen()));
         statsSystem.setHealth(statsSystem.getMaxHealth());
         statsSystem.setMana(statsSystem.getMaxMana());
-
+        //Screen:
         HealthBar.fillAmount = (int)statsSystem.HealthPercent();
         HealthText.SetText(((int)(statsSystem.getHealth())) + "/" + ((int)(statsSystem.getMaxHealth())));
         HealthShadowText.SetText(((int)(statsSystem.getHealth())) + "/" + ((int)(statsSystem.getMaxHealth())));
