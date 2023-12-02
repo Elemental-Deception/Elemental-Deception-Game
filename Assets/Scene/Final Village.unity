@@ -642,8 +642,8 @@ MonoBehaviour:
   dialogue:
     name: God
     sentences:
-    - You have made it to Zephyr. Use all your experience and power to defeat him
-      and save the world!
+    - You have made it to enemy boss. Use all your experience and power to defeat
+      him and save the world!
 --- !u!114 &231299244
 MonoBehaviour:
   m_ObjectHideFlags: 0

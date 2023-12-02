@@ -13017,7 +13017,8 @@ MonoBehaviour:
     name: God
     sentences:
     - You have arrived at the Snow Village!
-    - Continue to get stronger and challenge Zephyr!
+    - 'The Water Elementals cannot be killed because they are protected by the enemy. '
+    - Use them to train and keep your distance.
 --- !u!114 &1331506848
 MonoBehaviour:
   m_ObjectHideFlags: 0

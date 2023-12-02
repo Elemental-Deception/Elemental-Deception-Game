@@ -13330,7 +13330,7 @@ MonoBehaviour:
       elementals.
     - Each of the areas spawn 2 elements each. Slay them all for experience!
     - Once you slay them continue onto the other villages to gain more experience,
-      to challenge and slay Zephyr!
+      to challenge and slay the final enemy!
 --- !u!114 &748303432
 MonoBehaviour:
   m_ObjectHideFlags: 0
