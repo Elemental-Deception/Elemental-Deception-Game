@@ -3084,6 +3084,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7947911505737750450, guid: 84395be60ff2def43bb58fa039614eab,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7947911505737750450, guid: 84395be60ff2def43bb58fa039614eab,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -44025399
+      objectReference: {fileID: 0}
     - target: {fileID: 7947911505737750455, guid: 84395be60ff2def43bb58fa039614eab,
         type: 3}
       propertyPath: m_Name
@@ -5303,6 +5313,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7947911505737750450, guid: cfa0a5ef94fb05d4f97d095a05dc55c5,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7947911505737750450, guid: cfa0a5ef94fb05d4f97d095a05dc55c5,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -44025399
+      objectReference: {fileID: 0}
     - target: {fileID: 7947911505737750455, guid: cfa0a5ef94fb05d4f97d095a05dc55c5,
         type: 3}
       propertyPath: m_Name
@@ -6382,6 +6402,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2055102311959635368, guid: e54d3c80cde4e314eae0912eca6a93ae,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2055102311959635368, guid: e54d3c80cde4e314eae0912eca6a93ae,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -44025399
+      objectReference: {fileID: 0}
     - target: {fileID: 2055102311959635369, guid: e54d3c80cde4e314eae0912eca6a93ae,
         type: 3}
       propertyPath: m_Name
@@ -7082,6 +7112,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2055102311959635368, guid: 413081fc53a78a043b38591243616398,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2055102311959635368, guid: 413081fc53a78a043b38591243616398,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -44025399
+      objectReference: {fileID: 0}
     - target: {fileID: 2055102311959635369, guid: 413081fc53a78a043b38591243616398,
         type: 3}
       propertyPath: m_Name
@@ -7204,6 +7244,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4370152849212869299, guid: 9e7797bb065982d4497d030f065d6e2f,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4370152849212869299, guid: 9e7797bb065982d4497d030f065d6e2f,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -44025399
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8217,6 +8267,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7947911505737750450, guid: cfa0a5ef94fb05d4f97d095a05dc55c5,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7947911505737750450, guid: cfa0a5ef94fb05d4f97d095a05dc55c5,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -44025399
+      objectReference: {fileID: 0}
     - target: {fileID: 7947911505737750455, guid: cfa0a5ef94fb05d4f97d095a05dc55c5,
         type: 3}
       propertyPath: m_Name
@@ -8419,6 +8479,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2577585254963922478, guid: fb2df5b680b64b449a78162ebcd98e97,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2577585254963922478, guid: fb2df5b680b64b449a78162ebcd98e97,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -44025399
+      objectReference: {fileID: 0}
     - target: {fileID: 2577585254963922480, guid: fb2df5b680b64b449a78162ebcd98e97,
         type: 3}
       propertyPath: m_Name
@@ -8487,6 +8557,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2055102311959635368, guid: 6242b925f1d3e0d44a183102cd3d4c26,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2055102311959635368, guid: 6242b925f1d3e0d44a183102cd3d4c26,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -44025399
+      objectReference: {fileID: 0}
     - target: {fileID: 2055102311959635369, guid: 6242b925f1d3e0d44a183102cd3d4c26,
         type: 3}
       propertyPath: m_Name
@@ -14323,6 +14403,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7947911505737750450, guid: d925f1d26bd95904886e446c97ec33c3,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7947911505737750450, guid: d925f1d26bd95904886e446c97ec33c3,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -44025399
+      objectReference: {fileID: 0}
     - target: {fileID: 7947911505737750455, guid: d925f1d26bd95904886e446c97ec33c3,
         type: 3}
       propertyPath: m_Name
@@ -15692,6 +15782,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4370152849212869299, guid: 9e7797bb065982d4497d030f065d6e2f,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4370152849212869299, guid: 9e7797bb065982d4497d030f065d6e2f,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -44025399
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -18132,6 +18232,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2055102311959635368, guid: 42d58802fe231b14c8692b0c06082f5d,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2055102311959635368, guid: 42d58802fe231b14c8692b0c06082f5d,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -44025399
+      objectReference: {fileID: 0}
     - target: {fileID: 2055102311959635369, guid: 42d58802fe231b14c8692b0c06082f5d,
         type: 3}
       propertyPath: m_Name

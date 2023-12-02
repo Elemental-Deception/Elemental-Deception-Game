@@ -36,37 +36,21 @@ public class BossStatLogic : MonoBehaviour
     public void TakeDmg(int damage)
     {
         float temp;
-        if (enemy.name.Contains("FireElemental"))
-        {
-            damage = (int)Math.Round(damage * playerLogic.damageSystem.FireMultiplier);
-        }
-        else if (enemy.name.Contains("WaterElemental"))
-        {
-            damage = (int)Math.Round(damage * playerLogic.damageSystem.WaterMultiplier);
-        }
-        else if (enemy.name.Contains("EarthElemental"))
-        {
-            damage = (int)Math.Round(damage * playerLogic.damageSystem.EarthMultiplier);
-        }
-        else if (enemy.name.Contains("demon_slime_v1.0"))
-        {
-            damage = (int)Math.Round(damage * playerLogic.damageSystem.WaterMultiplier);
-        }
-        else
-        {
-            Debug.Log("Error finding enemy's element!");
-        }
+        Debug.Log(damage);
+        
 
         enemyStats.Health -= damage;
         damageVector = new Vector3(enemy.transform.position.x, enemy.transform.position.y + (float)0.5, enemy.transform.position.z);
         DynamicTextManager.CreateText2D(damageVector, damage.ToString(), DynamicTextManager.defaultData);
         animator.SetTrigger("Hurt");
-        if (enemyStats.Health <= 0 && !isDead)
+        Debug.Log("ouch");
+        if (enemyStats.Health <= 0)
         {
             healthBar.fillAmount = 0f;
             animator.SetTrigger("Dead");  // Assuming you have a trigger named "Die" to play death animation
             animator.SetBool("IsAlive", false);
             isDead = true; // Mark character as dead
+            Debug.Log("DEATHHHHHHHHHHHHHHHHHHHHHHHHH");
             DestroyEnemy(DelayAnimation);
         }
         else
