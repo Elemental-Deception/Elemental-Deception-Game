@@ -48,11 +48,15 @@ public class EnemyStatLogic : MonoBehaviour
         {
             damage = (int)Math.Round(damage * playerLogic.damageSystem.EarthMultiplier);
         }
+        else if(enemy.name.Contains("demon_slime_v1.0"))
+        {
+            damage = (int)Math.Round(damage * playerLogic.damageSystem.WaterMultiplier);
+        }
         else
         {
             Debug.Log("Error finding enemy's element!");
         }
-        
+
         enemyStats.Health -= damage;
         damageVector = new Vector3(enemy.transform.position.x, enemy.transform.position.y + (float)0.5, enemy.transform.position.z);
         DynamicTextManager.CreateText2D(damageVector, damage.ToString(), DynamicTextManager.defaultData);

@@ -2337,6 +2337,7 @@ MonoBehaviour:
   PauseMenu: {fileID: 0}
   spell: {fileID: 0}
   cam: {fileID: 0}
+  boxColliderOffset: 0
   yPositionOffset: 1
 --- !u!114 &1756781823607731958
 MonoBehaviour:
@@ -2356,8 +2357,15 @@ MonoBehaviour:
   sceneChangeTime: 0
   sceneName: 
   LevelText: {fileID: 0}
-  ShadowText: {fileID: 0}
+  LevelShadowText: {fileID: 0}
+  HealthText: {fileID: 0}
+  HealthShadowText: {fileID: 0}
+  ManaText: {fileID: 0}
+  ManaShadowText: {fileID: 0}
+  XPText: {fileID: 0}
+  XPShadowText: {fileID: 0}
   ManaFactor: 3
+  XPTextData: {fileID: 0}
 --- !u!114 &8419703871530887234
 MonoBehaviour:
   m_ObjectHideFlags: 0

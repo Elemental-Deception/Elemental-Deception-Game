@@ -98,6 +98,7 @@
     <Compile Include="Assets\DialogSystem\Environment\Standard Assets\Effects\ImageEffects\Scripts\ColorCorrectionRamp.cs" />
     <Compile Include="Assets\Dynamic Floating Text\Scripts\DynamicTextData.cs" />
     <Compile Include="Assets\DialogSystem\Environment\Standard Assets\Effects\ImageEffects\Scripts\Triangles.cs" />
+    <Compile Include="Assets\Script\BossStatLogic.cs" />
     <Compile Include="Assets\Script\TopDownCharacterController.cs" />
     <Compile Include="Assets\DialogSystem\Environment\Standard Assets\Effects\ImageEffects\Scripts\ContrastStretch.cs" />
     <Compile Include="Assets\DialogSystem\Environment\Standard Assets\Effects\ImageEffects\Scripts\Tonemapping.cs" />
