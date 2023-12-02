@@ -33579,6 +33579,11 @@ PrefabInstance:
       propertyPath: HealthShadowText
       value: 
       objectReference: {fileID: 1672012979}
+    - target: {fileID: 2187972101393413483, guid: 5e2d7cc0b7f7891409c417654f44dbd5,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2234047606340614277, guid: 5e2d7cc0b7f7891409c417654f44dbd5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -33634,6 +33639,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Human Mage
       objectReference: {fileID: 0}
+    - target: {fileID: 2236760825941965011, guid: 5e2d7cc0b7f7891409c417654f44dbd5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5886284486244240905, guid: 5e2d7cc0b7f7891409c417654f44dbd5,
         type: 3}
       propertyPath: cam
@@ -33669,6 +33679,11 @@ PrefabInstance:
       propertyPath: PauseMenu
       value: 
       objectReference: {fileID: 388306799}
+    - target: {fileID: 8009997308357498198, guid: 5e2d7cc0b7f7891409c417654f44dbd5,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
