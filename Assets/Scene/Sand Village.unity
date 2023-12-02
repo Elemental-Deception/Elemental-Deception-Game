@@ -2003,6 +2003,56 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 92a9322ee3bba184f91fbebe53b69bd9, type: 3}
+--- !u!1 &455360962
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 455360964}
+  - component: {fileID: 455360963}
+  m_Layer: 0
+  m_Name: EarthElementalSpawnZone
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &455360963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 455360962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94e5947754930c447a570c2bd2aaf553, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPrefab: {fileID: 1753982025}
+  spawnInterval: 15
+  maxEnemies: 1
+  countEnemies: 0
+  spawnZoneRadius: 5
+  gizmosColor: {r: 0, g: 1, b: 0, a: 1}
+--- !u!4 &455360964
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 455360962}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -6.7, y: -1, z: -0.20299344}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &474675956
 GameObject:
   m_ObjectHideFlags: 0
@@ -2993,8 +3043,9 @@ MonoBehaviour:
   dialogue:
     name: God
     sentences:
-    - 'You have arrived at the Sand Village! '
-    - Slay all of the Elementals and gain experience!
+    - You have arrived at the Sand Village! To kill these elementals they do not
+      need to be lured.
+    - Maintain your distance and kill the Earth Elementals!
 --- !u!114 &578865136
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16686,6 +16737,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 41f8909ba0e753748914f12b42e4a941, type: 3}
+--- !u!1 &1753982025 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7050496352289206265, guid: 41f8909ba0e753748914f12b42e4a941,
+    type: 3}
+  m_PrefabInstance: {fileID: 1753982024}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1776092270
 GameObject:
   m_ObjectHideFlags: 0
@@ -18368,3 +18425,4 @@ SceneRoots:
   - {fileID: 1412795266}
   - {fileID: 1741677759}
   - {fileID: 1950274777}
+  - {fileID: 455360964}

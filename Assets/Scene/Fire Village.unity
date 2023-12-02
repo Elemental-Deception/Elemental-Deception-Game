@@ -1758,6 +1758,56 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &433571772
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 433571774}
+  - component: {fileID: 433571773}
+  m_Layer: 0
+  m_Name: FireElementalSpawnZone (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &433571773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 433571772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94e5947754930c447a570c2bd2aaf553, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPrefab: {fileID: 918988507}
+  spawnInterval: 15
+  maxEnemies: 1
+  countEnemies: 0
+  spawnZoneRadius: 5
+  gizmosColor: {r: 0, g: 1, b: 0, a: 1}
+--- !u!4 &433571774
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 433571772}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.3, y: 10, z: -0.20299344}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &445810865
 GameObject:
   m_ObjectHideFlags: 0
@@ -5288,6 +5338,12 @@ TilemapCollider2D:
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
+--- !u!1 &918988507 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2768888953760587502, guid: a3469d173370d5c48bf3ad7e67b7af31,
+    type: 3}
+  m_PrefabInstance: {fileID: 631296969}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &926728955
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5792,6 +5848,56 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 985094441}
   m_CullTransparentMesh: 1
+--- !u!1 &988923186
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 988923188}
+  - component: {fileID: 988923187}
+  m_Layer: 0
+  m_Name: FireElementalSpawnZone
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &988923187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 988923186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94e5947754930c447a570c2bd2aaf553, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPrefab: {fileID: 918988507}
+  spawnInterval: 15
+  maxEnemies: 1
+  countEnemies: 0
+  spawnZoneRadius: 5
+  gizmosColor: {r: 0, g: 1, b: 0, a: 1}
+--- !u!4 &988923188
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 988923186}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 7.3, y: 0.3, z: -0.20299344}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1004400310
 GameObject:
   m_ObjectHideFlags: 0
@@ -16035,7 +16141,9 @@ MonoBehaviour:
     name: God
     sentences:
     - You have made it to the Fire Village!
-    - 'Defeat as many elementals as you can and save the village! '
+    - You have to lure them to damage the fire elementals! They are practically invincible
+      if they are standing still!
+    - Keep your distance and attack! Be careful and good luck!
 --- !u!114 &1971938823
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16791,3 +16899,5 @@ SceneRoots:
   - {fileID: 687792729}
   - {fileID: 1906588794}
   - {fileID: 1607875824}
+  - {fileID: 988923188}
+  - {fileID: 433571774}

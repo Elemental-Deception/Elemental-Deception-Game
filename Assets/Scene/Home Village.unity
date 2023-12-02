@@ -5263,6 +5263,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: demon_slime_v1.0
       objectReference: {fileID: 0}
+    - target: {fileID: 2317311017238964500, guid: a3af02d46988f244a9be29a764dc8e8f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3298117722397147505, guid: a3af02d46988f244a9be29a764dc8e8f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -13726,9 +13731,9 @@ MonoBehaviour:
     sentences:
     - This is the home village which has been infested with all of the different
       elementals.
-    - Slay all of the elementals to save the village! Gain experience to unlock your
-      true potential!
-    - Then continue on your journey to save each of the villages!
+    - Each of the areas spawn 2 elements each. Slay them all for experience!
+    - Once you slay them continue onto the other villages to gain more experience,
+      to challenge and slay Zephyr!
 --- !u!114 &748303432
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15823,7 +15828,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &984584257
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15839,6 +15844,7 @@ MonoBehaviour:
   enemyPrefab: {fileID: 993674694}
   spawnInterval: 15
   maxEnemies: 1
+  countEnemies: 0
   spawnZoneRadius: 5
   gizmosColor: {r: 0, g: 1, b: 0, a: 1}
 --- !u!4 &984584258
@@ -16806,7 +16812,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1052354029
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16822,6 +16828,7 @@ MonoBehaviour:
   enemyPrefab: {fileID: 552103298}
   spawnInterval: 15
   maxEnemies: 1
+  countEnemies: 0
   spawnZoneRadius: 5
   gizmosColor: {r: 0, g: 1, b: 0, a: 1}
 --- !u!4 &1052354030
@@ -16833,7 +16840,7 @@ Transform:
   m_GameObject: {fileID: 1052354028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.82, y: -0.05, z: -0.20299344}
+  m_LocalPosition: {x: -1, y: 13.9, z: -0.20299344}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -29658,7 +29665,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1890223286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29674,6 +29681,7 @@ MonoBehaviour:
   enemyPrefab: {fileID: 1899388194}
   spawnInterval: 15
   maxEnemies: 1
+  countEnemies: 0
   spawnZoneRadius: 5
   gizmosColor: {r: 0, g: 1, b: 0, a: 1}
 --- !u!4 &1890223287
@@ -29685,7 +29693,7 @@ Transform:
   m_GameObject: {fileID: 1890223285}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.82, y: -0.05, z: -0.20299344}
+  m_LocalPosition: {x: 6.5, y: -8, z: -0.20299344}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -33363,7 +33371,7 @@ PrefabInstance:
     - target: {fileID: 3691610641648477200, guid: 41f8909ba0e753748914f12b42e4a941,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.26
+      value: -0.1
       objectReference: {fileID: 0}
     - target: {fileID: 3691610641648477200, guid: 41f8909ba0e753748914f12b42e4a941,
         type: 3}
@@ -33428,7 +33436,7 @@ PrefabInstance:
     - target: {fileID: 7050496352289206265, guid: 41f8909ba0e753748914f12b42e4a941,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
