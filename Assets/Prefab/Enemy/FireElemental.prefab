@@ -301,7 +301,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4db84f854d1f53449ebacb90adec0ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyXP: 10
+  EnemyXP: 50
   healthBar: {fileID: 4164734710913865345}
   enemy: {fileID: 2768888953760587502}
   XPTextData: {fileID: 11400000, guid: 888603d21ae43284da4c7e0c0286ec6e, type: 2}
