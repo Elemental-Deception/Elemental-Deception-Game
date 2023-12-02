@@ -2970,6 +2970,7 @@ GameObject:
   - component: {fileID: 578865137}
   - component: {fileID: 578865136}
   - component: {fileID: 578865135}
+  - component: {fileID: 578865138}
   m_Layer: 0
   m_Name: DialogueManager
   m_TagString: Untagged
@@ -2992,10 +2993,8 @@ MonoBehaviour:
   dialogue:
     name: God
     sentences:
-    - Hello my child and welcome to Elemental Deception!
-    - You are the only remaining mage who can save the world from the rogue elements...
-    - "Traverse this tutorial using: W(\u2191) A(\u2190) S(\u2193) D(\u2192)"
-    - To attack, aim with the mouse and use Z, X, and C for different spells!
+    - 'You have arrived at the Sand Village! '
+    - Slay all of the Elementals and gain experience!
 --- !u!114 &578865136
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3026,6 +3025,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &578865138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 578865134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90909d6f04cd6c74ab6db15057e7dd04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &631030368
 PrefabInstance:
   m_ObjectHideFlags: 0
