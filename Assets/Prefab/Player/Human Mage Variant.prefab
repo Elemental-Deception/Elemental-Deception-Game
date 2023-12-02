@@ -72,6 +72,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1756781823607731958, guid: f7c79e3194127d64eb5474288cbc5f9c,
         type: 3}
+      propertyPath: XPTextData
+      value: 
+      objectReference: {fileID: 11400000, guid: 888603d21ae43284da4c7e0c0286ec6e,
+        type: 2}
+    - target: {fileID: 1756781823607731958, guid: f7c79e3194127d64eb5474288cbc5f9c,
+        type: 3}
       propertyPath: sceneChangeTime
       value: 2
       objectReference: {fileID: 0}
@@ -148,22 +154,22 @@ PrefabInstance:
     - target: {fileID: 7105543982660498337, guid: f7c79e3194127d64eb5474288cbc5f9c,
         type: 3}
       propertyPath: m_Size.x
-      value: 2.2687526
+      value: 1.5737653
       objectReference: {fileID: 0}
     - target: {fileID: 7105543982660498337, guid: f7c79e3194127d64eb5474288cbc5f9c,
         type: 3}
       propertyPath: m_Size.y
-      value: 5.5901947
+      value: 3.778268
       objectReference: {fileID: 0}
     - target: {fileID: 7105543982660498337, guid: f7c79e3194127d64eb5474288cbc5f9c,
         type: 3}
       propertyPath: m_Offset.x
-      value: 0.1461122
+      value: 0.096473455
       objectReference: {fileID: 0}
     - target: {fileID: 7105543982660498337, guid: f7c79e3194127d64eb5474288cbc5f9c,
         type: 3}
       propertyPath: m_Offset.y
-      value: -0.6549095
+      value: -1.5608729
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8419703871530887234, guid: f7c79e3194127d64eb5474288cbc5f9c, type: 3}
@@ -177,7 +183,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1553136491257334, guid: f7c79e3194127d64eb5474288cbc5f9c,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 6315415110225427508}
+      addedObject: {fileID: 9106391252968526889}
     - targetCorrespondingSourceObject: {fileID: 1064510135599338, guid: f7c79e3194127d64eb5474288cbc5f9c,
         type: 3}
       insertIndex: -1
@@ -377,7 +383,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2238032343415579941}
   m_PrefabAsset: {fileID: 0}
---- !u!81 &6315415110225427508
+--- !u!81 &9106391252968526889
 AudioListener:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

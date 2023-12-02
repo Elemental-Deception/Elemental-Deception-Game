@@ -123,6 +123,7 @@
     <Compile Include="Assets\DialogSystem\Environment\Standard Assets\Effects\ImageEffects\Scripts\CreaseShading.cs" />
     <Compile Include="Assets\Script\MenuController.cs" />
     <Compile Include="Assets\DialogSystem\Environment\Standard Assets\Effects\ImageEffects\Scripts\ColorCorrectionLookup.cs" />
+    <Compile Include="Assets\Script\Hearts.cs" />
     <Compile Include="Assets\Script\PlayerCharacter.cs" />
     <Compile Include="Assets\DialogSystem\DialogueManager.cs" />
     <Compile Include="Assets\Script\Teleport.cs" />
