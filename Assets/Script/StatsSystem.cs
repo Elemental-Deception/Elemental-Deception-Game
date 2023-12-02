@@ -65,7 +65,7 @@ public class StatsSystem : MonoBehaviour
     }
     //Setters
     public void setHealth(float Health){
-        PlayerPrefs.GetFloat("Health", Health);
+        PlayerPrefs.SetFloat("Health", Health);
         this.Health = Health;
     }
     public void setMaxHealth(float MaxHealth){
@@ -145,6 +145,9 @@ public class StatsSystem : MonoBehaviour
         };
     }
     public void addXP(float amount){
+        Debug.Log("xp "+ PlayerPrefs.GetFloat("XP"));
+        Debug.Log("max "+ PlayerPrefs.GetFloat("MaxXP"));
+        Debug.Log("amount" + amount);
         PlayerPrefs.SetFloat("XP", (PlayerPrefs.GetFloat("XP") + amount));
         while(PlayerPrefs.GetFloat("XP") > PlayerPrefs.GetFloat("MaxXP")){
             PlayerPrefs.SetFloat("XP",  PlayerPrefs.GetFloat("XP") - PlayerPrefs.GetFloat("MaxXP"));

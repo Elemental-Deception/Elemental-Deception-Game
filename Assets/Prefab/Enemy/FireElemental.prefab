@@ -301,7 +301,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4db84f854d1f53449ebacb90adec0ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyXP: 10
+  EnemyXP: 50
   healthBar: {fileID: 4164734710913865345}
   enemy: {fileID: 2768888953760587502}
   XPTextData: {fileID: 11400000, guid: 888603d21ae43284da4c7e0c0286ec6e, type: 2}
@@ -330,7 +330,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f39f2364e87975d46942f116bccd1f9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Enemy: {fileID: 8882114129901252283}
+  attackRange: 3
   attack: {fileID: 145483531104406283}
 --- !u!50 &5836505293109192442
 Rigidbody2D:
@@ -391,7 +391,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.5094296, y: -2.7300377}
+  m_Offset: {x: 0, y: -1}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -402,7 +402,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.9503953, y: 1.8598411}
+  m_Size: {x: 3.5, y: 6}
   m_EdgeRadius: 0
 --- !u!82 &3140427045467464874
 AudioSource:

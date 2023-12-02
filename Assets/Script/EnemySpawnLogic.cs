@@ -7,6 +7,8 @@ public class EnemySpawnLogic : MonoBehaviour
     public GameObject enemyPrefab; // The enemy prefab to spawn
     public float spawnInterval = 2f; // Time between each spawn
     public int maxEnemies = 5; // Maximum number of enemies at one time
+
+    public int countEnemies = 0;
     public float spawnZoneRadius = 5f; // Radius of the spawn zone
     public Color gizmosColor = Color.green; // Color of the Gizmos
 
@@ -19,10 +21,11 @@ public class EnemySpawnLogic : MonoBehaviour
         spawnedEnemies.RemoveAll(item => item == null);
 
         // Check if it's time to spawn a new enemy and if the max limit hasn't been reached
-        if (Time.time - timeSinceLastSpawn >= spawnInterval && spawnedEnemies.Count < maxEnemies)
+        if (Time.time - timeSinceLastSpawn >= spawnInterval && spawnedEnemies.Count < maxEnemies && countEnemies < 2)
         {
             SpawnEnemy();
             timeSinceLastSpawn = Time.time;
+            countEnemies++;
         }
     }
 
